@@ -1,42 +1,46 @@
-# Store Analysis — VALON Migration
+# Store Analysis — 0ipcp7-ts.myshopify.com / valon-shop.com
 
-> **Status:** Cannot auto-analyze your live store from this environment without your `*.myshopify.com` URL and authenticated CLI session. Run the commands below after login to compare live vs VALON.
+**Date:** 2026-06-08  
+**Live domain:** https://valon-shop.com  
+**Shopify URL:** https://0ipcp7-ts.myshopify.com
 
-## Pull your current live theme
+## Live storefront snapshot (public)
+
+| Element | Current live store | VALON v2 theme |
+|---------|-------------------|----------------|
+| Language | Arabic-first (Darija) + some French | French + Darija bilingual |
+| Announcement | نتائج مضمونة لكل زبون · التوصيل بالمجان · COD | Matched in announcement bar |
+| Hero hook | غدي تلاحظ تحول رهيب في شعرك | Integrated in hero darija line |
+| COD messaging | 💰 الدفع عند الاستلام prominent | COD steps, badges, cart flow |
+| Product | Pack VALON — 599/649 MAD | Featured product + product template |
+| Trust | Delivery + COD only | Trust bar, reviews, FAQ, before/after |
+| Design | Minimal Spotlight-style | Premium orange/black Moroccan brand |
+| Mobile | Basic | Mobile-first sticky ATC, 48px taps |
+
+## Conversion gaps on live store (addressed in VALON)
+
+1. **No social proof section** → 6 Moroccan testimonials + 4.9 rating
+2. **No before/after** → Before/after section with 94%/87%/91% stats
+3. **No FAQ** → 7-question COD/delivery FAQ accordion
+4. **No sticky mobile CTA** → Sticky add-to-cart on product pages
+5. **No COD checkout guidance** → Cart page with 3-step COD flow
+6. **No WhatsApp shortcut** → Floating WhatsApp FAB
+7. **Weak product page** → Full VALON product template with tabs
+
+## Products detected
+
+- **الحل الطبيعي لتقوية الشعر وتقليل التساقط** — 599.00 MAD (was 649.00 MAD)
+
+Assign this product to **Produit vedette** in theme editor after preview.
+
+## Safe deploy status
+
+- Live theme: unchanged until you publish VALON
+- valon-shop.com: stays on live theme until publish
+
+## Commands
 
 ```bash
-npx shopify auth login --store YOUR-STORE.myshopify.com
-npx shopify theme pull --store YOUR-STORE.myshopify.com --live --path ./live-theme-backup
+cd /workspace/valon-shopify
+./scripts/push-valon-unpublished.sh
 ```
-
-## Compare checklist
-
-| Area | What to check on live store | VALON v2 improvement |
-|------|----------------------------|----------------------|
-| Homepage | Hero CTA, trust signals, social proof | Dedicated conversion sections + featured product |
-| Mobile | Tap targets, sticky CTA, layout | Mobile-first CSS, sticky ATC, horizontal trust bar |
-| Product | COD visibility, reviews, FAQ | COD badge, tabs, sticky ATC, WhatsApp |
-| Cart/Checkout | COD payment method enabled | COD-focused cart + checkout CTA copy |
-| Trust | Delivery, returns, payment badges | Trust bar + COD flow + testimonials |
-| Brand | Colors, fonts, French/darija | Orange/black premium Moroccan positioning |
-| SEO | Meta titles, page speed | Semantic HTML, preconnect fonts |
-
-## Admin items to verify (not theme)
-
-- [ ] COD payment method enabled (Settings → Payments)
-- [ ] Morocco shipping zone configured
-- [ ] Products created with images
-- [ ] Pages created (notre-histoire, contact, policies)
-- [ ] Navigation menu linked
-- [ ] Domain connected
-
-## List all themes (confirm live unchanged)
-
-```bash
-npx shopify theme list --store YOUR-STORE.myshopify.com
-```
-
-Expected after push:
-
-- `[live]` — your current theme (unchanged)
-- `unpublished` — **VALON** (preview only)
