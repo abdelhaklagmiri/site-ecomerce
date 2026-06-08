@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        {% form 'product', product %}
+        {% form 'product', product, id: 'ValonProductForm' %}
           <div class="valon-product__qty">
             <div class="valon-qty-selector">
               <button type="button" class="valon-qty-btn" data-action="minus">−</button>
@@ -90,7 +90,8 @@
           <button type="submit" class="valon-btn valon-btn--primary valon-btn--full valon-btn--lg" style="margin-bottom:0.75rem;">
             Ajouter au panier — Paiement à la livraison
           </button>
-          <a href="https://wa.me/212600000000?text=Bonjour%20VALON%2C%20je%20souhaite%20commander%20{{ product.title | url_encode }}" class="valon-btn valon-btn--secondary valon-btn--full" target="_blank" rel="noopener">
+          {% assign wa = settings.whatsapp_number | default: '+212600000000' | remove: ' ' | remove: '+' %}
+          <a href="https://wa.me/{{ wa }}?text=Bonjour%20VALON%2C%20je%20souhaite%20commander%20{{ product.title | url_encode }}" class="valon-btn valon-btn--secondary valon-btn--full" target="_blank" rel="noopener">
             Commander via WhatsApp
           </a>
         {% endform %}
@@ -159,6 +160,8 @@
     </div>
   </div>
 </section>
+
+{% render 'valon-sticky-atc', product: product %}
 
 {% schema %}
 {

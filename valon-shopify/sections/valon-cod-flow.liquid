@@ -1,0 +1,61 @@
+<section class="valon-section valon-section--cream">
+  <div class="valon-container">
+    <div class="valon-section-header">
+      <span class="valon-eyebrow">Simple & sans risque</span>
+      <h2 class="valon-section-title">Commandez en toute confiance — paiement à la livraison</h2>
+      <p class="valon-section-subtitle">
+        Pas de carte bancaire requise. Payez en espèces quand votre colis arrive chez vous, partout au Maroc.
+      </p>
+    </div>
+
+    {% render 'valon-cod-steps' %}
+
+    <div class="valon-cod-flow__grid">
+      <div class="valon-cod-flow__card">
+        <strong>🇲🇦 Livraison nationale</strong>
+        <p>Casablanca, Rabat, Marrakech, Tanger, Agadir, Fès — 48 à 72h ouvrées.</p>
+      </div>
+      <div class="valon-cod-flow__card">
+        <strong>💵 Paiement COD</strong>
+        <p>Préparez le montant exact en espèces pour le livreur. Aucun frais caché.</p>
+      </div>
+      <div class="valon-cod-flow__card">
+        <strong>↩️ Retours 14 jours</strong>
+        <p>Non satisfaite ? Retournez le produit non ouvert sous 14 jours.</p>
+      </div>
+      <div class="valon-cod-flow__card">
+        <strong>📱 Support WhatsApp</strong>
+        <p>Une question avant de commander ? Notre équipe répond rapidement.</p>
+      </div>
+    </div>
+
+    {% if section.settings.cta_url != blank %}
+      <div class="valon-text-center valon-mt-2">
+        <a href="{{ section.settings.cta_url }}" class="valon-btn valon-btn--primary valon-btn--lg">
+          {{ section.settings.cta_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Flux COD VALON",
+  "settings": [
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Lien CTA",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Texte CTA",
+      "default": "Commander maintenant — COD"
+    }
+  ],
+  "presets": [{ "name": "Flux COD VALON" }]
+}
+{% endschema %}

@@ -23,6 +23,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   {{ 'valon.css' | asset_url | stylesheet_tag }}
+  <style>
+    :root {
+      --valon-orange: {{ settings.color_primary | default: '#FF6B00' }};
+      --valon-black: {{ settings.color_secondary | default: '#0A0A0A' }};
+    }
+  </style>
   <script src="{{ 'valon.js' | asset_url }}" defer></script>
 </head>
 <body class="valon-body template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
@@ -36,5 +42,7 @@
   </main>
 
   {% section 'valon-footer' %}
+
+  {% render 'valon-whatsapp-fab' %}
 </body>
 </html>

@@ -8,6 +8,10 @@
       "type": "valon-trust-bar",
       "settings": {}
     },
+    "featured-product": {
+      "type": "valon-featured-product",
+      "settings": {}
+    },
     "benefits": {
       "type": "valon-benefits",
       "settings": {}
@@ -19,6 +23,13 @@
     "reviews": {
       "type": "valon-reviews",
       "settings": {}
+    },
+    "cod-flow": {
+      "type": "valon-cod-flow",
+      "settings": {
+        "cta_url": "/collections/all",
+        "cta_label": "Commander maintenant — COD"
+      }
     },
     "faq": {
       "type": "valon-faq",
@@ -32,9 +43,11 @@
   "order": [
     "hero",
     "trust-bar",
+    "featured-product",
     "benefits",
     "before-after",
     "reviews",
+    "cod-flow",
     "faq",
     "cta"
   ]

@@ -1,0 +1,16 @@
+{% if product %}
+<div class="valon-sticky-atc" id="ValonStickyAtc" aria-hidden="true">
+  <div class="valon-sticky-atc__inner">
+    <div class="valon-sticky-atc__info">
+      <p class="valon-sticky-atc__title">{{ product.title | truncate: 42 }}</p>
+      <p class="valon-sticky-atc__price">
+        {{ product.price | money }}
+        <span class="valon-sticky-atc__cod">· COD</span>
+      </p>
+    </div>
+    <button type="submit" form="ValonProductForm" class="valon-btn valon-btn--primary valon-sticky-atc__btn">
+      Commander
+    </button>
+  </div>
+</div>
+{% endif %}

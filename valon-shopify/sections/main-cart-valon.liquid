@@ -1,0 +1,111 @@
+<section class="valon-cart">
+  <div class="valon-container">
+    <div class="valon-cart__header">
+      <h1 class="valon-page__title">Votre panier</h1>
+      <p class="valon-cart__subtitle">Paiement à la livraison disponible — payez en espèces à la réception 🇲🇦</p>
+    </div>
+
+    {% render 'valon-cod-steps' %}
+
+    {% if cart.item_count > 0 %}
+      <div class="valon-cart__grid">
+        <div class="valon-cart__items">
+          <form action="{{ routes.cart_url }}" method="post" id="ValonCartForm">
+            {% for item in cart.items %}
+              <div class="valon-cart-item">
+                <a href="{{ item.url }}" class="valon-cart-item__image">
+                  {% if item.image %}
+                    {{ item.image | image_url: width: 160 | image_tag: alt: item.title }}
+                  {% endif %}
+                </a>
+                <div class="valon-cart-item__details">
+                  <a href="{{ item.url }}" class="valon-cart-item__title">{{ item.product.title }}</a>
+                  {% unless item.variant.title contains 'Default' %}
+                    <p class="valon-cart-item__variant">{{ item.variant.title }}</p>
+                  {% endunless %}
+                  <p class="valon-cart-item__price">{{ item.final_line_price | money }}</p>
+                  <div class="valon-cart-item__qty">
+                    <label class="visually-hidden" for="Quantity-{{ item.key }}">Quantité</label>
+                    <input
+                      type="number"
+                      name="updates[]"
+                      id="Quantity-{{ item.key }}"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      class="valon-qty-input"
+                    >
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+            <div class="valon-cart__actions-row">
+              <button type="submit" name="update" class="valon-btn valon-btn--secondary">Mettre à jour</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="valon-cart__summary">
+          <div class="valon-cart__summary-card">
+            <h2 class="valon-cart__summary-title">Récapitulatif</h2>
+
+            {% assign threshold = settings.free_shipping_threshold | default: '399' | times: 100 %}
+            {% if cart.total_price < threshold %}
+              {% assign remaining = threshold | minus: cart.total_price | money %}
+              <div class="valon-cart__shipping-progress">
+                <p>Plus que <strong>{{ remaining }}</strong> pour la livraison gratuite</p>
+                <div class="valon-cart__progress-bar">
+                  {% assign pct = cart.total_price | times: 100 | divided_by: threshold %}
+                  <span style="width: {{ pct }}%;"></span>
+                </div>
+              </div>
+            {% else %}
+              <p class="valon-cart__free-shipping">✓ Livraison gratuite débloquée</p>
+            {% endif %}
+
+            <div class="valon-cart__line">
+              <span>Sous-total</span>
+              <span>{{ cart.total_price | money }}</span>
+            </div>
+            <div class="valon-cart__line valon-cart__line--muted">
+              <span>Livraison</span>
+              <span>Calculée à l'étape suivante</span>
+            </div>
+
+            <div class="valon-product__cod-badge valon-cart__cod">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div>
+                <strong>Choisissez « Paiement à la livraison » au checkout</strong><br>
+                <span style="color:var(--valon-gray-600);">Aucune carte requise. Payez le livreur en espèces.</span>
+              </div>
+            </div>
+
+            <button type="submit" form="ValonCartForm" name="checkout" class="valon-btn valon-btn--primary valon-btn--full valon-btn--lg">
+              Passer commande — COD
+            </button>
+
+            <div class="valon-cart__trust">
+              <span>🔒 Paiement sécurisé</span>
+              <span>📦 Livraison 48-72h</span>
+              <span>↩️ Retours 14j</span>
+            </div>
+
+            <a href="{{ routes.all_products_collection_url }}" class="valon-cart__continue">← Continuer mes achats</a>
+          </div>
+        </aside>
+      </div>
+    {% else %}
+      <div class="valon-cart__empty">
+        <p>Votre panier est vide.</p>
+        <a href="{{ routes.all_products_collection_url }}" class="valon-btn valon-btn--primary">Découvrir la collection</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Panier VALON",
+  "settings": []
+}
+{% endschema %}

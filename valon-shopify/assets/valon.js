@@ -6,6 +6,26 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.addEventListener('click', function () {
       nav.classList.toggle('is-open');
     });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+      });
+    });
+  }
+
+  // Sticky add-to-cart (mobile product page)
+  const stickyAtc = document.getElementById('ValonStickyAtc');
+  const productForm = document.getElementById('ValonProductForm');
+  if (stickyAtc && productForm) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        const visible = entries[0].isIntersecting;
+        stickyAtc.classList.toggle('is-visible', !visible);
+        stickyAtc.setAttribute('aria-hidden', visible ? 'true' : 'false');
+      },
+      { root: null, threshold: 0, rootMargin: '0px 0px -80px 0px' }
+    );
+    observer.observe(productForm);
   }
 
   // FAQ accordion

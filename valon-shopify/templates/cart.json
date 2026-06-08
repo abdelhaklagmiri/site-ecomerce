@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart-valon",
+      "settings": {}
+    },
+    "cod-flow": {
+      "type": "valon-cod-flow",
+      "settings": {
+        "cta_url": "/collections/all",
+        "cta_label": "Découvrir nos produits"
+      }
+    }
+  },
+  "order": ["main", "cod-flow"]
+}

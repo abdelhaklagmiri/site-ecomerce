@@ -1,0 +1,9 @@
+content/**
+marketing/**
+*.md
+README.md
+SHOPIFY-SETUP-GUIDE.md
+DEPLOY-VALON.md
+CHANGELOG-VALON-v2.md
+PREVIEW-CHECKLIST.md
+STORE-ANALYSIS.md

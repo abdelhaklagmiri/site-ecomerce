@@ -1,0 +1,71 @@
+{% assign featured = section.settings.product %}
+{% if featured == blank and collections.all.products.size > 0 %}
+  {% assign featured = collections.all.products.first %}
+{% endif %}
+
+{% if featured %}
+<section class="valon-section valon-featured-product">
+  <div class="valon-container">
+    <div class="valon-featured-product__grid">
+      <div class="valon-featured-product__media">
+        {% if featured.featured_image %}
+          {{ featured.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: featured.title, class: 'valon-featured-product__image' }}
+        {% else %}
+          <div class="valon-featured-product__placeholder">Image produit</div>
+        {% endif %}
+        <span class="valon-featured-product__badge">Bestseller</span>
+      </div>
+
+      <div class="valon-featured-product__content">
+        <span class="valon-eyebrow">Produit n°1 au Maroc</span>
+        <h2 class="valon-section-title" style="text-align:left;margin-bottom:0.75rem;">{{ featured.title }}</h2>
+        <div class="valon-product__rating">
+          <span class="valon-product__stars">★★★★★</span>
+          <span>4.9 — choix des clientes marocaines</span>
+        </div>
+        <p class="valon-featured-product__excerpt">
+          {{ featured.description | strip_html | truncate: 180 }}
+        </p>
+        <p class="valon-featured-product__price">{{ featured.price | money }}</p>
+
+        <div class="valon-product__cod-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div>
+            <strong>Paiement à la livraison</strong><br>
+            <span style="color:var(--valon-gray-600);">Commandez sans carte — payez en espèces à la réception.</span>
+          </div>
+        </div>
+
+        <div class="valon-featured-product__actions">
+          <a href="{{ featured.url }}" class="valon-btn valon-btn--primary valon-btn--lg valon-btn--full-mobile">
+            Commander — {{ featured.price | money }}
+          </a>
+          <a href="{{ featured.url }}" class="valon-btn valon-btn--secondary valon-btn--full-mobile">
+            Voir les détails
+          </a>
+        </div>
+
+        <ul class="valon-featured-product__micro">
+          <li>Livraison 48-72h</li>
+          <li>Satisfait 14 jours</li>
+          <li>Sans sulfates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Produit vedette VALON",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit vedette"
+    }
+  ],
+  "presets": [{ "name": "Produit vedette VALON" }]
+}
+{% endschema %}
