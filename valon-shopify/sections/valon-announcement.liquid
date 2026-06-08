@@ -1,0 +1,23 @@
+<div class="valon-announcement">
+  <div class="valon-container">
+    {% if section.settings.text != blank %}
+      {{ section.settings.text }}
+    {% else %}
+      Livraison gratuite dès 399 DH · <span>Paiement à la livraison</span> partout au Maroc 🇲🇦
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bandeau annonce",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texte",
+      "default": "<p>Livraison gratuite dès 399 DH · <span>Paiement à la livraison</span> partout au Maroc 🇲🇦</p>"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+<section class="valon-page">
+  <div class="valon-container">
+    {% if section.settings.show_header %}
+      <div class="valon-page__header">
+        <h1 class="valon-page__title">{{ page.title }}</h1>
+        {% if section.settings.subtitle != blank %}
+          <p class="valon-page__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="valon-page__content">
+      {% if section.settings.use_page_content %}
+        {{ page.content }}
+      {% else %}
+        {{ section.settings.custom_content }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu de page VALON",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Afficher l'en-tête",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_page_content",
+      "label": "Utiliser le contenu de la page Shopify",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "custom_content",
+      "label": "Contenu personnalisé (si désactivé)"
+    }
+  ]
+}
+{% endschema %}

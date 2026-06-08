@@ -1,0 +1,74 @@
+<section class="valon-section">
+  <div class="valon-container">
+    <div class="valon-ba__grid">
+      <div class="valon-ba__comparison">
+        <div class="valon-ba__card">
+          <span class="valon-ba__card-label">Avant</span>
+          <div class="valon-ba__image">
+            {% if section.settings.before_image %}
+              {{ section.settings.before_image | image_url: width: 400 | image_tag: alt: 'Avant VALON' }}
+            {% else %}
+              Photo Avant<br><small>Cheveux secs, cassants</small>
+            {% endif %}
+          </div>
+        </div>
+        <div class="valon-ba__card">
+          <span class="valon-ba__card-label valon-ba__card-label--after">Après 21 jours</span>
+          <div class="valon-ba__image">
+            {% if section.settings.after_image %}
+              {{ section.settings.after_image | image_url: width: 400 | image_tag: alt: 'Après VALON' }}
+            {% else %}
+              Photo Après<br><small>Cheveux brillants, hydratés</small>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="valon-ba__content">
+        <span class="valon-eyebrow">Résultats réels</span>
+        <h3>La transformation commence au premier lavage</h3>
+        <p style="color:var(--valon-gray-600);line-height:1.8;margin-bottom:1rem;">
+          Nos clientes marocaines partagent leurs résultats après seulement 3 semaines avec le Rituel VALON complet. Pas de filtres, pas de retouches — juste des cheveux visiblement plus sains.
+        </p>
+        <p style="font-style:italic;color:var(--valon-orange);margin-bottom:1.5rem;">
+          « Ma chwiya daba kayban chi haja khayba — mes cheveux brillent enfin comme avant. » — Salma, Casablanca
+        </p>
+
+        <div class="valon-ba__stats">
+          <div class="valon-ba__stat">
+            <strong>94%</strong>
+            <span>Cheveux plus brillants</span>
+          </div>
+          <div class="valon-ba__stat">
+            <strong>87%</strong>
+            <span>Moins de casse</span>
+          </div>
+          <div class="valon-ba__stat">
+            <strong>91%</strong>
+            <span>Recommanderaient VALON</span>
+          </div>
+        </div>
+
+        <a href="/collections/all" class="valon-btn valon-btn--primary">Voir les produits</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avant / Après",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Image Avant"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "Image Après"
+    }
+  ]
+}
+{% endschema %}

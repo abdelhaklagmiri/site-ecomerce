@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "valon-page-content",
+      "settings": {
+        "show_header": true,
+        "subtitle": "Nous livrons partout au Maroc avec paiement à la livraison. Rapide, fiable, et sans surprise.",
+        "use_page_content": true
+      }
+    }
+  },
+  "order": ["main"]
+}

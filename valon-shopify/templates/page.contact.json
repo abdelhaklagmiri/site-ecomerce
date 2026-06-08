@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "valon-page-content",
+      "settings": {
+        "show_header": true,
+        "subtitle": "Notre équipe est là pour vous aider. Nous répondons en français et en darija, du lundi au samedi.",
+        "use_page_content": true
+      }
+    }
+  },
+  "order": ["main"]
+}

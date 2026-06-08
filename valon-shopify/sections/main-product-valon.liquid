@@ -1,0 +1,168 @@
+<section class="valon-product">
+  <div class="valon-container">
+    <div class="valon-product__grid">
+      <!-- Gallery -->
+      <div class="valon-product__gallery">
+        <div class="valon-product__main-image">
+          {% if product.featured_image %}
+            {{ product.featured_image | image_url: width: 800 | image_tag: alt: product.title }}
+          {% else %}
+            Image produit VALON
+          {% endif %}
+        </div>
+        <div class="valon-product__thumbs">
+          {% for image in product.images limit: 4 %}
+            <div class="valon-product__thumb{% if forloop.first %} is-active{% endif %}">
+              {{ image | image_url: width: 150 | image_tag: alt: product.title }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="valon-product__info">
+        <span class="valon-product__badge">Bestseller · Livraison 48h</span>
+        <h1 class="valon-product__title">{{ product.title | default: "Sérum Capillaire VALON — Huile d'Argan & Figue de Barbarie" }}</h1>
+
+        <div class="valon-product__rating">
+          <span class="valon-product__stars">★★★★★</span>
+          <span>4.9 (487 avis)</span>
+        </div>
+
+        <div class="valon-product__price">
+          {{ product.price | money | default: "299,00 DH" }}
+          {% if product.compare_at_price > product.price %}
+            <span class="valon-product__compare-price">{{ product.compare_at_price | money }}</span>
+          {% else %}
+            <span class="valon-product__compare-price">399,00 DH</span>
+          {% endif %}
+        </div>
+
+        <div class="valon-product__cod-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div>
+            <strong>Paiement à la livraison disponible</strong><br>
+            <span style="color:var(--valon-gray-600);">Commandez sans risque — payez en espèces à la réception de votre colis.</span>
+          </div>
+        </div>
+
+        <p style="font-size:0.9375rem;line-height:1.8;color:var(--valon-gray-600);margin-bottom:1rem;">
+          Le sérum capillaire VALON nourrit en profondeur, répare les pointes abîmées et redonne brillance et force à vos cheveux. Formule concentrée à l'huile d'argan bio du Souss et à l'extrait de figue de barbarie.
+        </p>
+
+        <ul class="valon-product__benefits">
+          <li>Réduit la casse et les pointes fourchues dès 7 jours</li>
+          <li>Hydratation intense sans effet gras</li>
+          <li>Protège contre la chaleur du sèche-cheveux et du soleil</li>
+          <li>Convient à tous les types de cheveux — bouclés, lisses, colorés</li>
+          <li>85% d'ingrédients d'origine naturelle — sans sulfates ni parabènes</li>
+          <li>Parfum délicat, notes florales et amandées</li>
+        </ul>
+
+        <div class="valon-product__trust-badges">
+          <div class="valon-trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Paiement COD
+          </div>
+          <div class="valon-trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Livraison 48-72h
+          </div>
+          <div class="valon-trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Satisfait 14 jours
+          </div>
+          <div class="valon-trust-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9/5 — 487 avis
+          </div>
+        </div>
+
+        {% form 'product', product %}
+          <div class="valon-product__qty">
+            <div class="valon-qty-selector">
+              <button type="button" class="valon-qty-btn" data-action="minus">−</button>
+              <input type="number" name="quantity" value="1" min="1" class="valon-qty-input" id="Quantity">
+              <button type="button" class="valon-qty-btn" data-action="plus">+</button>
+            </div>
+          </div>
+
+          <button type="submit" class="valon-btn valon-btn--primary valon-btn--full valon-btn--lg" style="margin-bottom:0.75rem;">
+            Ajouter au panier — Paiement à la livraison
+          </button>
+          <a href="https://wa.me/212600000000?text=Bonjour%20VALON%2C%20je%20souhaite%20commander%20{{ product.title | url_encode }}" class="valon-btn valon-btn--secondary valon-btn--full" target="_blank" rel="noopener">
+            Commander via WhatsApp
+          </a>
+        {% endform %}
+
+        <p style="font-size:0.75rem;color:var(--valon-gray-400);margin-top:1rem;text-align:center;">
+          🔒 Vos données sont protégées · Livraison gratuite dès 399 DH
+        </p>
+      </div>
+    </div>
+
+    <!-- Product Tabs -->
+    <div class="valon-product__tabs">
+      <div class="valon-tabs__nav">
+        <button class="valon-tabs__btn is-active" data-tab="description">Description</button>
+        <button class="valon-tabs__btn" data-tab="ingredients">Ingrédients</button>
+        <button class="valon-tabs__btn" data-tab="usage">Mode d'emploi</button>
+        <button class="valon-tabs__btn" data-tab="faq">FAQ</button>
+      </div>
+
+      <div class="valon-tabs__panel is-active" data-panel="description">
+        <h3>Description du produit</h3>
+        <p>Le Sérum Capillaire VALON est le soin star de notre collection. Sa formule ultra-concentrée associe l'huile d'argan pressée à froid du Souss marocain à l'extrait de figue de barbarie, reconnu pour ses propriétés régénérantes et antioxydantes.</p>
+        <p>Conçu pour les femmes marocaines confrontées au climat sec, à l'eau calcaire et aux agressions quotidiennes (soleil, pollution, traitements chimiques), ce sérum pénètre instantanément la fibre capillaire sans alourdir. Résultat : des cheveux plus forts, plus brillants et visiblement plus sains en 21 jours.</p>
+        <p>Texture légère, fini soyeux, parfum subtil aux notes d'argan et de fleur d'oranger. Un rituel de luxe accessible, livré chez vous avec paiement à la livraison.</p>
+
+        <h3>Ce que vous obtenez</h3>
+        <ul>
+          <li>1 flacon de 50ml — environ 2 mois d'utilisation</li>
+          <li>Guide d'utilisation en français et darija</li>
+          <li>Packaging premium orange et noir</li>
+          <li>Garantie satisfaction 14 jours</li>
+        </ul>
+      </div>
+
+      <div class="valon-tabs__panel" data-panel="ingredients">
+        <h3>Ingrédients clés</h3>
+        <ul>
+          <li><strong>Huile d'Argan Bio (15%)</strong> — Nourrit, répare et apporte brillance. Source : coopératives du Souss, Maroc.</li>
+          <li><strong>Extrait de Figue de Barbarie (5%)</strong> — Antioxydant puissant, stimule la repousse, protège la fibre.</li>
+          <li><strong>Huile de Jojoba</strong> — Hydratation profonde sans effet gras.</li>
+          <li><strong>Vitamine E</strong> — Protection contre les radicaux libres et le vieillissement capillaire.</li>
+          <li><strong>Beurre de Karité</strong> — Nutrition intense pour cheveux secs et abîmés.</li>
+          <li><strong>Extrait de Romarin</strong> — Stimule le cuir chevelu, réduit la chute.</li>
+        </ul>
+        <p><strong>Sans :</strong> sulfates, parabènes, silicones agressifs, colorants artificiels, testé sur les animaux.</p>
+      </div>
+
+      <div class="valon-tabs__panel" data-panel="usage">
+        <h3>Mode d'emploi</h3>
+        <ol>
+          <li>Appliquez 2 à 3 pipettes sur cheveux propins et humides ou secs, en insistant sur les longueurs et les pointes.</li>
+          <li>Massez délicatement pour faire pénétrer le sérum. Ne rincez pas.</li>
+          <li>Coiffez comme d'habitude. Le sérum protège également contre la chaleur du sèche-cheveux.</li>
+          <li>Utilisez 3 à 4 fois par semaine pour des résultats optimaux.</li>
+        </ol>
+        <p><em>Conseil VALON :</em> Pour un soin intensif, appliquez une dose généreuse le soir et laissez poser toute la nuit. Lavez le matin pour des cheveux transformés.</p>
+      </div>
+
+      <div class="valon-tabs__panel" data-panel="faq">
+        <h3>Questions fréquentes sur ce produit</h3>
+        <p><strong>Convient-il aux cheveux gras ?</strong><br>Oui. La texture légère ne laisse aucun résidu gras. Appliquez principalement sur les longueurs, pas sur le cuir chevelu.</p>
+        <p><strong>Puis-je l'utiliser sur cheveux colorés ?</strong><br>Absolument. Le sérum protège la couleur et prévient la décoloration liée au soleil.</p>
+        <p><strong>Combien de temps dure un flacon ?</strong><br>Environ 2 mois avec une utilisation régulière (3-4 fois/semaine).</p>
+        <p><strong>Le paiement à la livraison est-il disponible ?</strong><br>Oui, partout au Maroc. Vous payez en espèces au livreur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produit VALON",
+  "settings": []
+}
+{% endschema %}

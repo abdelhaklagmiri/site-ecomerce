@@ -1,0 +1,781 @@
+/* VALON Hair Care — Premium Theme
+   Colors: Orange #FF6B00 / Black #0A0A0A */
+
+:root {
+  --valon-orange: #FF6B00;
+  --valon-orange-dark: #E05A00;
+  --valon-orange-light: #FFF4EC;
+  --valon-black: #0A0A0A;
+  --valon-black-soft: #1A1A1A;
+  --valon-gray-900: #2D2D2D;
+  --valon-gray-600: #6B6B6B;
+  --valon-gray-400: #9A9A9A;
+  --valon-gray-200: #E8E8E8;
+  --valon-gray-100: #F5F5F5;
+  --valon-white: #FFFFFF;
+  --valon-cream: #FAFAF8;
+  --valon-font-display: 'Cormorant Garamond', Georgia, serif;
+  --valon-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --valon-radius: 4px;
+  --valon-radius-lg: 12px;
+  --valon-shadow: 0 4px 24px rgba(10, 10, 10, 0.08);
+  --valon-shadow-lg: 0 12px 48px rgba(10, 10, 10, 0.12);
+  --valon-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --valon-container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body.valon-body {
+  font-family: var(--valon-font-body);
+  color: var(--valon-black);
+  background: var(--valon-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.valon-skip-link {
+  position: absolute; left: -9999px; z-index: 9999;
+  padding: 1rem 2rem; background: var(--valon-orange); color: white;
+}
+.valon-skip-link:focus { left: 1rem; top: 1rem; }
+
+.valon-container {
+  max-width: var(--valon-container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ─── Announcement Bar ─── */
+.valon-announcement {
+  background: var(--valon-black);
+  color: var(--valon-white);
+  text-align: center;
+  padding: 0.625rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.valon-announcement span { color: var(--valon-orange); }
+
+/* ─── Header ─── */
+.valon-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--valon-gray-200);
+}
+.valon-header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--valon-container); margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+.valon-logo {
+  font-family: var(--valon-font-display);
+  font-size: 1.75rem; font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--valon-black);
+}
+.valon-logo span { color: var(--valon-orange); }
+.valon-nav { display: flex; gap: 2rem; list-style: none; }
+.valon-nav a {
+  font-size: 0.8125rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: color var(--valon-transition);
+}
+.valon-nav a:hover { color: var(--valon-orange); }
+.valon-header__actions { display: flex; align-items: center; gap: 1rem; }
+.valon-cart-btn {
+  position: relative; padding: 0.5rem;
+  color: var(--valon-black);
+}
+.valon-cart-count {
+  position: absolute; top: 0; right: 0;
+  background: var(--valon-orange); color: white;
+  font-size: 0.625rem; font-weight: 700;
+  width: 16px; height: 16px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.valon-menu-toggle { display: none; padding: 0.5rem; }
+
+@media (max-width: 768px) {
+  .valon-nav { display: none; }
+  .valon-menu-toggle { display: block; }
+  .valon-nav.is-open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; padding: 1.5rem;
+    border-bottom: 1px solid var(--valon-gray-200);
+    gap: 1rem;
+  }
+}
+
+/* ─── Buttons ─── */
+.valon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1rem 2rem;
+  font-size: 0.8125rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: var(--valon-radius);
+  transition: all var(--valon-transition);
+  cursor: pointer; border: 2px solid transparent;
+}
+.valon-btn--primary {
+  background: var(--valon-orange); color: white;
+  border-color: var(--valon-orange);
+}
+.valon-btn--primary:hover {
+  background: var(--valon-orange-dark);
+  border-color: var(--valon-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
+}
+.valon-btn--secondary {
+  background: transparent; color: var(--valon-black);
+  border-color: var(--valon-black);
+}
+.valon-btn--secondary:hover {
+  background: var(--valon-black); color: white;
+}
+.valon-btn--white {
+  background: white; color: var(--valon-black);
+  border-color: white;
+}
+.valon-btn--white:hover {
+  background: var(--valon-orange-light);
+  border-color: var(--valon-orange-light);
+}
+.valon-btn--full { width: 100%; }
+.valon-btn--lg { padding: 1.125rem 2.5rem; font-size: 0.875rem; }
+
+/* ─── Section Titles ─── */
+.valon-section { padding: 5rem 0; }
+.valon-section--dark { background: var(--valon-black); color: white; }
+.valon-section--cream { background: var(--valon-cream); }
+.valon-section--orange-light { background: var(--valon-orange-light); }
+
+.valon-section-header { text-align: center; margin-bottom: 3.5rem; }
+.valon-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--valon-orange); margin-bottom: 0.75rem;
+}
+.valon-section--dark .valon-eyebrow { color: var(--valon-orange); }
+.valon-section-title {
+  font-family: var(--valon-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600; line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.valon-section-subtitle {
+  font-size: 1.0625rem; color: var(--valon-gray-600);
+  max-width: 560px; margin: 0 auto;
+  line-height: 1.7;
+}
+.valon-section--dark .valon-section-subtitle { color: rgba(255,255,255,0.7); }
+
+/* ─── Hero ─── */
+.valon-hero {
+  position: relative; min-height: 90vh;
+  display: flex; align-items: center;
+  background: var(--valon-black);
+  overflow: hidden;
+}
+.valon-hero__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--valon-black) 0%, var(--valon-black-soft) 50%, #1a0f00 100%);
+}
+.valon-hero__bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(255,107,0,0.15) 0%, transparent 60%);
+}
+.valon-hero__grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+  max-width: var(--valon-container); margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+.valon-hero__content { color: white; }
+.valon-hero__badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,107,0,0.15); border: 1px solid rgba(255,107,0,0.3);
+  padding: 0.5rem 1rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--valon-orange); margin-bottom: 1.5rem;
+}
+.valon-hero__title {
+  font-family: var(--valon-font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.valon-hero__title em { color: var(--valon-orange); font-style: italic; }
+.valon-hero__text {
+  font-size: 1.125rem; line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 2rem; max-width: 480px;
+}
+.valon-hero__darija {
+  font-style: italic; color: var(--valon-orange);
+  font-size: 1rem; margin-bottom: 2rem;
+}
+.valon-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.valon-hero__trust {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.valon-hero__trust-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8125rem; color: rgba(255,255,255,0.6);
+}
+.valon-hero__trust-item svg { color: var(--valon-orange); flex-shrink: 0; }
+.valon-hero__visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.valon-hero__image-wrap {
+  position: relative; width: 100%; max-width: 440px;
+  aspect-ratio: 3/4; border-radius: var(--valon-radius-lg);
+  overflow: hidden;
+  background: linear-gradient(180deg, #2a1a0a 0%, var(--valon-black) 100%);
+  border: 1px solid rgba(255,107,0,0.2);
+}
+.valon-hero__image-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--valon-font-display);
+  font-size: 1.25rem; color: rgba(255,107,0,0.4);
+  text-align: center; padding: 2rem;
+}
+.valon-hero__float-badge {
+  position: absolute; bottom: 2rem; left: -1.5rem;
+  background: white; color: var(--valon-black);
+  padding: 1rem 1.25rem; border-radius: var(--valon-radius);
+  box-shadow: var(--valon-shadow-lg);
+  font-size: 0.8125rem; font-weight: 600;
+}
+.valon-hero__float-badge strong {
+  display: block; font-size: 1.5rem;
+  color: var(--valon-orange); font-family: var(--valon-font-display);
+}
+
+@media (max-width: 900px) {
+  .valon-hero__grid { grid-template-columns: 1fr; text-align: center; padding: 4rem 1.5rem; }
+  .valon-hero__text { margin-left: auto; margin-right: auto; }
+  .valon-hero__actions { justify-content: center; }
+  .valon-hero__trust { justify-content: center; }
+  .valon-hero__visual { order: -1; }
+  .valon-hero__float-badge { left: 1rem; }
+}
+
+/* ─── Benefits ─── */
+.valon-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.valon-benefit-card {
+  padding: 2.5rem 2rem;
+  background: white;
+  border: 1px solid var(--valon-gray-200);
+  border-radius: var(--valon-radius-lg);
+  transition: all var(--valon-transition);
+  text-align: center;
+}
+.valon-benefit-card:hover {
+  border-color: var(--valon-orange);
+  box-shadow: var(--valon-shadow);
+  transform: translateY(-4px);
+}
+.valon-benefit-card__icon {
+  width: 56px; height: 56px;
+  background: var(--valon-orange-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+}
+.valon-benefit-card__title {
+  font-family: var(--valon-font-display);
+  font-size: 1.375rem; font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.valon-benefit-card__text {
+  font-size: 0.9375rem; color: var(--valon-gray-600); line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .valon-benefits__grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Before / After ─── */
+.valon-ba__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
+}
+.valon-ba__comparison {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.valon-ba__card {
+  border-radius: var(--valon-radius-lg); overflow: hidden;
+  position: relative;
+}
+.valon-ba__card-label {
+  position: absolute; top: 1rem; left: 1rem;
+  background: var(--valon-black); color: white;
+  padding: 0.375rem 0.875rem; border-radius: 100px;
+  font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.valon-ba__card-label--after { background: var(--valon-orange); }
+.valon-ba__image {
+  aspect-ratio: 3/4;
+  background: var(--valon-gray-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.875rem; color: var(--valon-gray-400);
+  text-align: center; padding: 1rem;
+}
+.valon-ba__content h3 {
+  font-family: var(--valon-font-display);
+  font-size: 2rem; margin-bottom: 1rem;
+}
+.valon-ba__stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin: 2rem 0;
+}
+.valon-ba__stat strong {
+  display: block;
+  font-family: var(--valon-font-display);
+  font-size: 2.5rem; color: var(--valon-orange);
+  line-height: 1;
+}
+.valon-ba__stat span {
+  font-size: 0.8125rem; color: var(--valon-gray-600);
+}
+
+@media (max-width: 768px) {
+  .valon-ba__grid { grid-template-columns: 1fr; }
+  .valon-ba__stats { grid-template-columns: 1fr; text-align: center; }
+}
+
+/* ─── Reviews ─── */
+.valon-reviews__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.valon-review-card {
+  background: white; padding: 2rem;
+  border-radius: var(--valon-radius-lg);
+  border: 1px solid var(--valon-gray-200);
+}
+.valon-review-card__stars { color: var(--valon-orange); margin-bottom: 1rem; font-size: 0.875rem; }
+.valon-review-card__text {
+  font-size: 0.9375rem; line-height: 1.7;
+  color: var(--valon-gray-900); margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.valon-review-card__author {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.valon-review-card__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--valon-orange-light);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--valon-orange); font-size: 0.875rem;
+}
+.valon-review-card__name { font-weight: 600; font-size: 0.875rem; }
+.valon-review-card__city { font-size: 0.75rem; color: var(--valon-gray-400); }
+.valon-reviews__summary {
+  text-align: center; margin-top: 3rem;
+  padding: 2rem; background: white;
+  border-radius: var(--valon-radius-lg);
+  border: 1px solid var(--valon-gray-200);
+  display: inline-flex; flex-direction: column;
+  align-items: center; width: 100%;
+}
+.valon-reviews__score {
+  font-family: var(--valon-font-display);
+  font-size: 3.5rem; font-weight: 700;
+  color: var(--valon-orange); line-height: 1;
+}
+.valon-reviews__count { font-size: 0.875rem; color: var(--valon-gray-600); margin-top: 0.5rem; }
+
+@media (max-width: 768px) {
+  .valon-reviews__grid { grid-template-columns: 1fr; }
+}
+
+/* ─── FAQ ─── */
+.valon-faq__list { max-width: 720px; margin: 0 auto; }
+.valon-faq__item {
+  border-bottom: 1px solid var(--valon-gray-200);
+}
+.valon-faq__question {
+  width: 100%; text-align: left;
+  padding: 1.5rem 0;
+  font-size: 1rem; font-weight: 600;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; color: var(--valon-black);
+  transition: color var(--valon-transition);
+}
+.valon-faq__question:hover { color: var(--valon-orange); }
+.valon-faq__icon {
+  flex-shrink: 0; width: 24px; height: 24px;
+  border: 1px solid var(--valon-gray-200); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.125rem; transition: all var(--valon-transition);
+}
+.valon-faq__item.is-open .valon-faq__icon {
+  background: var(--valon-orange); border-color: var(--valon-orange); color: white;
+  transform: rotate(45deg);
+}
+.valon-faq__answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-size: 0.9375rem; color: var(--valon-gray-600); line-height: 1.7;
+}
+.valon-faq__item.is-open .valon-faq__answer {
+  max-height: 300px; padding-bottom: 1.5rem;
+}
+
+/* ─── CTA Banner ─── */
+.valon-cta {
+  background: var(--valon-orange);
+  padding: 5rem 0; text-align: center;
+  position: relative; overflow: hidden;
+}
+.valon-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
+}
+.valon-cta__inner { position: relative; z-index: 1; }
+.valon-cta__title {
+  font-family: var(--valon-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white; margin-bottom: 1rem;
+}
+.valon-cta__text {
+  font-size: 1.125rem; color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+}
+.valon-cta__darija {
+  font-style: italic; font-size: 1rem;
+  color: rgba(255,255,255,0.7); margin-bottom: 2rem;
+}
+
+/* ─── Trust Bar ─── */
+.valon-trust-bar {
+  background: var(--valon-cream);
+  border-top: 1px solid var(--valon-gray-200);
+  border-bottom: 1px solid var(--valon-gray-200);
+  padding: 1.25rem 0;
+}
+.valon-trust-bar__grid {
+  display: flex; justify-content: center;
+  gap: 3rem; flex-wrap: wrap;
+}
+.valon-trust-bar__item {
+  display: flex; align-items: center; gap: 0.625rem;
+  font-size: 0.8125rem; font-weight: 500;
+  color: var(--valon-gray-900);
+}
+.valon-trust-bar__item svg { color: var(--valon-orange); }
+
+/* ─── Product Page ─── */
+.valon-product {
+  padding: 3rem 0 5rem;
+}
+.valon-product__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: start;
+}
+.valon-product__gallery {
+  position: sticky; top: 100px;
+}
+.valon-product__main-image {
+  aspect-ratio: 1; border-radius: var(--valon-radius-lg);
+  background: var(--valon-cream);
+  border: 1px solid var(--valon-gray-200);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.875rem; color: var(--valon-gray-400);
+  margin-bottom: 1rem; overflow: hidden;
+}
+.valon-product__thumbs {
+  display: flex; gap: 0.75rem;
+}
+.valon-product__thumb {
+  width: 72px; height: 72px;
+  border-radius: var(--valon-radius);
+  border: 2px solid var(--valon-gray-200);
+  background: var(--valon-cream);
+  cursor: pointer; transition: border-color var(--valon-transition);
+}
+.valon-product__thumb.is-active,
+.valon-product__thumb:hover { border-color: var(--valon-orange); }
+
+.valon-product__badge {
+  display: inline-block;
+  background: var(--valon-orange-light);
+  color: var(--valon-orange);
+  padding: 0.375rem 0.875rem;
+  border-radius: 100px;
+  font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.valon-product__title {
+  font-family: var(--valon-font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600; line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.valon-product__rating {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1.25rem; font-size: 0.875rem;
+}
+.valon-product__stars { color: var(--valon-orange); }
+.valon-product__price {
+  font-family: var(--valon-font-display);
+  font-size: 2rem; font-weight: 700;
+  color: var(--valon-black); margin-bottom: 0.25rem;
+}
+.valon-product__compare-price {
+  font-size: 1.125rem; color: var(--valon-gray-400);
+  text-decoration: line-through; margin-left: 0.75rem;
+}
+.valon-product__cod-badge {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: var(--valon-orange-light);
+  border: 1px solid rgba(255,107,0,0.2);
+  padding: 1rem 1.25rem;
+  border-radius: var(--valon-radius);
+  margin: 1.5rem 0;
+  font-size: 0.875rem; font-weight: 500;
+}
+.valon-product__cod-badge svg { color: var(--valon-orange); flex-shrink: 0; }
+.valon-product__benefits {
+  list-style: none; margin: 1.5rem 0;
+}
+.valon-product__benefits li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.5rem 0; font-size: 0.9375rem;
+}
+.valon-product__benefits li::before {
+  content: '✓'; color: var(--valon-orange);
+  font-weight: 700; flex-shrink: 0;
+}
+.valon-product__trust-badges {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem; margin: 1.5rem 0;
+}
+.valon-trust-badge {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem; background: var(--valon-cream);
+  border-radius: var(--valon-radius);
+  font-size: 0.75rem; font-weight: 500;
+}
+.valon-trust-badge svg { color: var(--valon-orange); flex-shrink: 0; }
+.valon-product__qty {
+  display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0;
+}
+.valon-qty-selector {
+  display: flex; align-items: center;
+  border: 1px solid var(--valon-gray-200);
+  border-radius: var(--valon-radius);
+}
+.valon-qty-btn {
+  width: 40px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; color: var(--valon-gray-600);
+  transition: color var(--valon-transition);
+}
+.valon-qty-btn:hover { color: var(--valon-orange); }
+.valon-qty-input {
+  width: 48px; height: 44px; text-align: center;
+  border: none; border-left: 1px solid var(--valon-gray-200);
+  border-right: 1px solid var(--valon-gray-200);
+  font-size: 0.9375rem; font-weight: 600;
+}
+.valon-product__tabs { margin-top: 3rem; border-top: 1px solid var(--valon-gray-200); }
+.valon-tabs__nav {
+  display: flex; gap: 0; border-bottom: 1px solid var(--valon-gray-200);
+}
+.valon-tabs__btn {
+  padding: 1rem 1.5rem;
+  font-size: 0.8125rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--valon-gray-400);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--valon-transition);
+}
+.valon-tabs__btn.is-active {
+  color: var(--valon-orange);
+  border-bottom-color: var(--valon-orange);
+}
+.valon-tabs__panel {
+  display: none; padding: 2rem 0;
+  font-size: 0.9375rem; line-height: 1.8;
+  color: var(--valon-gray-600);
+}
+.valon-tabs__panel.is-active { display: block; }
+.valon-tabs__panel h3 {
+  font-family: var(--valon-font-display);
+  font-size: 1.25rem; color: var(--valon-black);
+  margin: 1.5rem 0 0.75rem;
+}
+.valon-tabs__panel h3:first-child { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .valon-product__grid { grid-template-columns: 1fr; }
+  .valon-product__gallery { position: static; }
+}
+
+/* ─── Page Content (Brand, Policies) ─── */
+.valon-page {
+  padding: 4rem 0 5rem;
+}
+.valon-page__header {
+  text-align: center; margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--valon-gray-200);
+}
+.valon-page__title {
+  font-family: var(--valon-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+.valon-page__subtitle {
+  font-size: 1.0625rem; color: var(--valon-gray-600);
+  max-width: 600px; margin: 0 auto;
+}
+.valon-page__content {
+  max-width: 760px; margin: 0 auto;
+}
+.valon-page__content h2 {
+  font-family: var(--valon-font-display);
+  font-size: 1.5rem; margin: 2.5rem 0 1rem;
+  color: var(--valon-black);
+}
+.valon-page__content h3 {
+  font-size: 1.125rem; font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+}
+.valon-page__content p {
+  font-size: 0.9375rem; line-height: 1.8;
+  color: var(--valon-gray-600); margin-bottom: 1rem;
+}
+.valon-page__content ul, .valon-page__content ol {
+  margin: 1rem 0 1rem 1.5rem;
+  font-size: 0.9375rem; color: var(--valon-gray-600); line-height: 1.8;
+}
+.valon-page__content li { margin-bottom: 0.5rem; }
+.valon-page__content strong { color: var(--valon-black); }
+
+/* ─── Contact Page ─── */
+.valon-contact__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; max-width: 900px; margin: 0 auto;
+}
+.valon-contact__info h3 {
+  font-family: var(--valon-font-display);
+  font-size: 1.375rem; margin-bottom: 1.5rem;
+}
+.valon-contact__item {
+  display: flex; gap: 1rem; margin-bottom: 1.5rem;
+}
+.valon-contact__icon {
+  width: 44px; height: 44px;
+  background: var(--valon-orange-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--valon-orange);
+}
+.valon-contact__item strong { display: block; font-size: 0.875rem; margin-bottom: 0.25rem; }
+.valon-contact__item span { font-size: 0.875rem; color: var(--valon-gray-600); }
+.valon-contact__form .valon-form-group { margin-bottom: 1.25rem; }
+.valon-form-label {
+  display: block; font-size: 0.8125rem; font-weight: 600;
+  margin-bottom: 0.5rem; letter-spacing: 0.03em;
+}
+.valon-form-input, .valon-form-textarea, .valon-form-select {
+  width: 100%; padding: 0.875rem 1rem;
+  border: 1px solid var(--valon-gray-200);
+  border-radius: var(--valon-radius);
+  font-size: 0.9375rem; font-family: inherit;
+  transition: border-color var(--valon-transition);
+  background: white;
+}
+.valon-form-input:focus, .valon-form-textarea:focus, .valon-form-select:focus {
+  outline: none; border-color: var(--valon-orange);
+}
+.valon-form-textarea { min-height: 140px; resize: vertical; }
+
+@media (max-width: 768px) {
+  .valon-contact__grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Footer ─── */
+.valon-footer {
+  background: var(--valon-black); color: white;
+  padding: 4rem 0 2rem;
+}
+.valon-footer__grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.valon-footer__brand .valon-logo { color: white; margin-bottom: 1rem; display: inline-block; }
+.valon-footer__brand p {
+  font-size: 0.875rem; color: rgba(255,255,255,0.6);
+  line-height: 1.7; max-width: 280px;
+}
+.valon-footer__heading {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 1.25rem; color: var(--valon-orange);
+}
+.valon-footer__links { list-style: none; }
+.valon-footer__links li { margin-bottom: 0.625rem; }
+.valon-footer__links a {
+  font-size: 0.875rem; color: rgba(255,255,255,0.6);
+  transition: color var(--valon-transition);
+}
+.valon-footer__links a:hover { color: white; }
+.valon-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+  font-size: 0.8125rem; color: rgba(255,255,255,0.4);
+}
+.valon-footer__payments {
+  display: flex; gap: 0.75rem; align-items: center;
+}
+.valon-footer__payment-badge {
+  background: rgba(255,255,255,0.1);
+  padding: 0.375rem 0.75rem; border-radius: var(--valon-radius);
+  font-size: 0.6875rem; font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .valon-footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .valon-footer__grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Utilities ─── */
+.valon-text-center { text-align: center; }
+.valon-mt-2 { margin-top: 2rem; }
+.valon-divider {
+  width: 60px; height: 2px;
+  background: var(--valon-orange);
+  margin: 1.5rem auto;
+}

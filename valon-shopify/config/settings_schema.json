@@ -1,0 +1,61 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "VALON Premium",
+    "theme_version": "1.0.0",
+    "theme_author": "VALON Hair Care",
+    "theme_documentation_url": "https://valon.ma",
+    "theme_support_url": "https://valon.ma/pages/contact"
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Orange principal",
+        "default": "#FF6B00"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Noir",
+        "default": "#0A0A0A"
+      }
+    ]
+  },
+  {
+    "name": "Contact",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "Numéro WhatsApp",
+        "default": "+212600000000"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email",
+        "default": "contact@valon.ma"
+      }
+    ]
+  },
+  {
+    "name": "Livraison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Seuil livraison gratuite (DH)",
+        "default": "399"
+      },
+      {
+        "type": "text",
+        "id": "shipping_fee",
+        "label": "Frais de livraison (DH)",
+        "default": "29"
+      }
+    ]
+  }
+]

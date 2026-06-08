@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "valon-hero",
+      "settings": {}
+    },
+    "trust-bar": {
+      "type": "valon-trust-bar",
+      "settings": {}
+    },
+    "benefits": {
+      "type": "valon-benefits",
+      "settings": {}
+    },
+    "before-after": {
+      "type": "valon-before-after",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "valon-reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "valon-faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "valon-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "benefits",
+    "before-after",
+    "reviews",
+    "faq",
+    "cta"
+  ]
+}

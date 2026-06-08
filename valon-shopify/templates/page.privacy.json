@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "valon-page-content",
+      "settings": {
+        "show_header": true,
+        "subtitle": "Comment nous protégeons vos données personnelles.",
+        "use_page_content": true
+      }
+    }
+  },
+  "order": ["main"]
+}

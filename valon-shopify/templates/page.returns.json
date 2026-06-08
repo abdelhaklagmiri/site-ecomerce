@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "valon-page-content",
+      "settings": {
+        "show_header": true,
+        "subtitle": "Votre satisfaction est notre priorité. Si un produit ne vous convient pas, nous trouvons une solution.",
+        "use_page_content": true
+      }
+    }
+  },
+  "order": ["main"]
+}

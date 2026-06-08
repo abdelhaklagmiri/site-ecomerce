@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "trust-bar": {
+      "type": "valon-trust-bar",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product-valon",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "valon-reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "valon-faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "valon-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "trust-bar",
+    "main-product",
+    "reviews",
+    "faq",
+    "cta"
+  ]
+}
