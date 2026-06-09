@@ -1,102 +1,116 @@
-# VALON — Catalogue Produits & Descriptions Shopify
+# VALON — Pack Premium 599 DH (produit unique)
 
-Copiez ces informations dans **Produits > Ajouter un produit** dans l'admin Shopify.
+Copiez ces informations dans **Produits → Ajouter/Modifier un produit** dans Shopify Admin.
 
 ---
 
-## Produit 1 : Sérum Capillaire VALON — Huile d'Argan & Figue de Barbarie
+## Fiche produit Shopify
 
 | Champ | Valeur |
 |-------|--------|
-| **Titre** | Sérum Capillaire VALON — Huile d'Argan & Figue de Barbarie |
-| **Prix** | 299,00 MAD |
-| **Prix comparé** | 399,00 MAD |
-| **SKU** | VALON-SERUM-50 |
-| **Stock** | 100 |
+| **Titre** | Pack VALON — الحل الطبيعي لتقوية الشعر وتقليل التساقط |
+| **Handle** | `pack-valon` |
+| **Prix** | **599,00 MAD** |
+| **Prix comparé** | 649,00 MAD |
+| **SKU** | VALON-PACK-01 |
+| **Stock** | Selon votre inventaire |
 | **Collection** | Soins Capillaires |
-| **Tags** | bestseller, serum, argan, anti-casse, cod |
-
-### Description courte (meta)
-Le sérum capillaire premium à l'huile d'argan bio et figue de barbarie. Cheveux plus forts, plus brillants en 21 jours. Paiement à la livraison.
-
-### Description complète
-Le Sérum Capillaire VALON est le soin star de notre collection. Sa formule ultra-concentrée associe l'huile d'argan pressée à froid du Souss marocain à l'extrait de figue de barbarie, reconnu pour ses propriétés régénérantes et antioxydantes.
-
-**Bénéfices :**
-- Réduit la casse et les pointes fourchues dès 7 jours
-- Hydratation intense sans effet gras
-- Protège contre la chaleur du sèche-cheveux et du soleil
-- Convient à tous les types de cheveux
-- 85% d'ingrédients d'origine naturelle
-
-**Contenu :** 1 flacon de 50ml (≈ 2 mois d'utilisation)
-
-**Paiement à la livraison disponible partout au Maroc.**
+| **Tags** | bestseller, pack, argan, anti-chute, cod, premium |
+| **Template** | `product` (default VALON) |
 
 ---
 
-## Produit 2 : Shampoing Nourrissant VALON — Argan & Romarin
+## Description courte (SEO / Google / Meta)
 
-| Champ | Valeur |
-|-------|--------|
-| **Titre** | Shampoing Nourrissant VALON — Argan & Romarin |
-| **Prix** | 189,00 MAD |
-| **Prix comparé** | 249,00 MAD |
-| **SKU** | VALON-SHAMPOO-250 |
-| **Collection** | Soins Capillaires |
-
-### Description
-Shampoing sans sulfates enrichi en huile d'argan et extrait de romarin de l'Atlas. Nettoie en douceur sans dessécher, même avec l'eau calcaire marocaine. Idéal pour un usage quotidien.
+Pack capillaire premium VALON : renforce les cheveux, réduit la chute et redonne brillance dès les premières utilisations. Formule à l'argan marocain. Coffret cadeau premium. **599 DH — Paiement à la livraison** partout au Maroc.
 
 ---
 
-## Produit 3 : Masque Capillaire Intense VALON — Karité & Figue de Barbarie
+## Description complète
 
-| Champ | Valeur |
-|-------|--------|
-| **Titre** | Masque Capillaire Intense VALON — Karité & Figue de Barbarie |
-| **Prix** | 249,00 MAD |
-| **Prix comparé** | 329,00 MAD |
-| **SKU** | VALON-MASK-200 |
-| **Collection** | Soins Capillaires |
+Coller le contenu de `pack-valon-description.html` dans l'éditeur HTML du produit, **ou** utiliser le texte ci-dessous.
 
-### Description
-Masque réparateur à appliquer une fois par semaine. Beurre de karité, figue de barbarie et vitamine E pour une nutrition profonde. Résultats visibles dès la première application.
+### Accroche
+
+**غدي تلاحظ تحول رهيب في شعرك** — dès les premières utilisations.
+
+Le **Pack VALON** est la solution naturelle pour **renforcer les cheveux**, **réduire la chute** et retrouver **force, brillance et souplesse**. Conçu pour le climat marocain : soleil, eau calcaire, chaleur et stress capillaire quotidien.
 
 ---
 
-## Produit 4 : Kit Rituel Complet VALON (Bundle)
+### Ce que contient le Pack (599 DH)
 
-| Champ | Valeur |
-|-------|--------|
-| **Titre** | Kit Rituel Complet VALON — Sérum + Shampoing + Masque |
-| **Prix** | 649,00 MAD |
-| **Prix comparé** | 737,00 MAD |
-| **SKU** | VALON-KIT-COMPLET |
-| **Collection** | Kits & Coffrets |
-| **Tags** | bundle, bestseller, kit, cod |
-
-### Description
-Le rituel capillaire complet pour une transformation visible en 21 jours. Inclut :
-- 1x Sérum Capillaire (50ml)
-- 1x Shampoing Nourrissant (250ml)
-- 1x Masque Capillaire Intense (200ml)
-- 1x Guide d'utilisation en français et darija
-- Packaging cadeau premium
-
-**Économisez 88 DH** par rapport à l'achat séparé. Livraison gratuite incluse.
+- 1 soin capillaire VALON — flacon premium noir & or
+- Coffret cadeau crème avec logo VALON doré
+- Carte personnalisée *« Merci d'avoir choisi VALON »*
+- Calage premium pour une livraison soignée
+- Guide d'utilisation (français + darija)
 
 ---
 
-## Produit 5 : Huile Capillaire Pure VALON — Argan 100%
+### Bénéfices
 
-| Champ | Valeur |
-|-------|--------|
-| **Titre** | Huile Capillaire Pure VALON — Argan 100% Bio |
-| **Prix** | 179,00 MAD |
-| **Prix comparé** | 229,00 MAD |
-| **SKU** | VALON-OIL-30 |
-| **Collection** | Soins Capillaires |
+- Renforce la fibre capillaire et réduit la chute visible
+- Nourrit en profondeur avec l'**huile d'argan** du Souss
+- Redonne brillance et souplesse **sans effet gras**
+- Convient à tous types de cheveux (bouclés, lisses, colorés, secs)
+- Formule adaptée à l'**eau calcaire** marocaine
+- **85%** d'ingrédients d'origine naturelle — sans sulfates ni parabènes
 
-### Description
-Huile d'argan pure, pressée à froid, certifiée bio. Issue des coopératives du Souss. Multi-usages : cheveux, ongles, peau. Le trésor du Maroc en flacon.
+---
+
+### Mode d'emploi
+
+1. Appliquez sur cheveux propres, longueurs et pointes
+2. Massez délicatement — **ne rincez pas**
+3. Utilisez **3 à 4 fois par semaine** pour des résultats optimaux
+4. Pour un soin intensif : appliquez le soir, laissez poser toute la nuit
+
+*Conseil VALON :* Protège également contre la chaleur du sèche-cheveux.
+
+---
+
+### Livraison & paiement
+
+| | |
+|---|---|
+| **Prix** | 599 DH (au lieu de 649 DH) |
+| **Livraison** | 48–72h dans tout le Maroc |
+| **Livraison gratuite** | Dès 399 DH — **incluse pour ce pack** |
+| **Paiement** | **Paiement à la livraison (COD)** — payez en espèces au livreur |
+| **Garantie** | Satisfait ou remboursé **14 jours** |
+
+---
+
+### FAQ produit
+
+**Le paiement à la livraison est-il disponible ?**  
+Oui, partout au Maroc. Vous payez en espèces à la réception.
+
+**Combien de temps pour voir des résultats ?**  
+La majorité des clientes constatent une amélioration visible dès **7 à 21 jours**.
+
+**Convient-il aux cheveux gras ?**  
+Oui. Texture légère, sans résidu gras. Appliquez sur les longueurs, pas sur le cuir chevelu.
+
+**Puis-je l'offrir en cadeau ?**  
+Oui. Le coffret premium et la carte de remerciement sont inclus.
+
+**Quelles villes sont livrées ?**  
+Casablanca, Rabat, Marrakech, Tanger, Agadir, Fès et toutes les villes du Maroc.
+
+---
+
+## Images recommandées (ordre)
+
+1. Unboxing coffret ouvert (photo principale)
+2. Flacon noir & bouchon doré — gros plan
+3. Carte « Merci d'avoir choisi VALON »
+4. Avant / après cheveux
+5. Badge COD + livraison 48h
+
+---
+
+## Texte Darija (WhatsApp / pubs)
+
+> « Pack VALON — الحل الطبيعي لتقوية الشعر. Kay9awwi cheveux, kay9ll t9at, w kayrj3 l'brillance. 599 DH, livraison 48h, w tkhless ghir f yedd l'livreur. Sifti Commande daba. »

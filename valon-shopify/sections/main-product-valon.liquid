@@ -21,8 +21,8 @@
 
       <!-- Product Info -->
       <div class="valon-product__info">
-        <span class="valon-product__badge">Bestseller · Livraison 48h</span>
-        <h1 class="valon-product__title">{{ product.title | default: "Sérum Capillaire VALON — Huile d'Argan & Figue de Barbarie" }}</h1>
+        <span class="valon-product__badge">Pack Premium · Livraison gratuite · COD</span>
+        <h1 class="valon-product__title">{{ product.title | default: "Pack VALON — الحل الطبيعي لتقوية الشعر وتقليل التساقط" }}</h1>
 
         <div class="valon-product__rating">
           <span class="valon-product__stars">★★★★★</span>
@@ -30,11 +30,11 @@
         </div>
 
         <div class="valon-product__price">
-          {{ product.price | money | default: "299,00 DH" }}
+          {{ product.price | money | default: "599,00 DH" }}
           {% if product.compare_at_price > product.price %}
             <span class="valon-product__compare-price">{{ product.compare_at_price | money }}</span>
           {% else %}
-            <span class="valon-product__compare-price">399,00 DH</span>
+            <span class="valon-product__compare-price">649,00 DH</span>
           {% endif %}
         </div>
 
@@ -46,17 +46,20 @@
           </div>
         </div>
 
-        <p style="font-size:0.9375rem;line-height:1.8;color:var(--valon-gray-600);margin-bottom:1rem;">
-          Le sérum capillaire VALON nourrit en profondeur, répare les pointes abîmées et redonne brillance et force à vos cheveux. Formule concentrée à l'huile d'argan bio du Souss et à l'extrait de figue de barbarie.
+        <p style="font-size:0.9375rem;line-height:1.8;color:var(--valon-gray-600);margin-bottom:0.5rem;">
+          <strong>غدي تلاحظ تحول رهيب في شعرك</strong> — La solution naturelle pour renforcer les cheveux, réduire la chute et retrouver force et brillance.
+        </p>
+        <p style="font-size:0.875rem;line-height:1.7;color:var(--valon-gray-600);margin-bottom:1rem;">
+          Pack premium : soin capillaire à l'argan du Souss, coffret cadeau crème &amp; or, carte « Merci d'avoir choisi VALON ».
         </p>
 
         <ul class="valon-product__benefits">
-          <li>Réduit la casse et les pointes fourchues dès 7 jours</li>
-          <li>Hydratation intense sans effet gras</li>
-          <li>Protège contre la chaleur du sèche-cheveux et du soleil</li>
-          <li>Convient à tous les types de cheveux — bouclés, lisses, colorés</li>
-          <li>85% d'ingrédients d'origine naturelle — sans sulfates ni parabènes</li>
-          <li>Parfum délicat, notes florales et amandées</li>
+          <li>Renforce la fibre capillaire et réduit la chute visible</li>
+          <li>Nourrit en profondeur avec l'huile d'argan marocaine</li>
+          <li>Brillance et souplesse sans effet gras</li>
+          <li>Convient à tous les types de cheveux — climat marocain</li>
+          <li>Coffret cadeau premium — idéal à offrir</li>
+          <li>Livraison gratuite incluse · Satisfait 14 jours</li>
         </ul>
 
         <div class="valon-product__trust-badges">
@@ -88,7 +91,7 @@
           </div>
 
           <button type="submit" class="valon-btn valon-btn--primary valon-btn--full valon-btn--lg" style="margin-bottom:0.75rem;">
-            Ajouter au panier — Paiement à la livraison
+            Commander le Pack — 599 DH · Paiement à la livraison
           </button>
           {% assign wa = settings.whatsapp_number | default: '+212600000000' | remove: ' ' | remove: '+' %}
           <a href="https://wa.me/{{ wa }}?text=Bonjour%20VALON%2C%20je%20souhaite%20commander%20{{ product.title | url_encode }}" class="valon-btn valon-btn--secondary valon-btn--full" target="_blank" rel="noopener">
@@ -97,7 +100,7 @@
         {% endform %}
 
         <p style="font-size:0.75rem;color:var(--valon-gray-400);margin-top:1rem;text-align:center;">
-          🔒 Vos données sont protégées · Livraison gratuite dès 399 DH
+          🔒 Données protégées · Livraison gratuite incluse · 🇲🇦 COD partout au Maroc
         </p>
       </div>
     </div>
@@ -112,18 +115,21 @@
       </div>
 
       <div class="valon-tabs__panel is-active" data-panel="description">
-        <h3>Description du produit</h3>
-        <p>Le Sérum Capillaire VALON est le soin star de notre collection. Sa formule ultra-concentrée associe l'huile d'argan pressée à froid du Souss marocain à l'extrait de figue de barbarie, reconnu pour ses propriétés régénérantes et antioxydantes.</p>
-        <p>Conçu pour les femmes marocaines confrontées au climat sec, à l'eau calcaire et aux agressions quotidiennes (soleil, pollution, traitements chimiques), ce sérum pénètre instantanément la fibre capillaire sans alourdir. Résultat : des cheveux plus forts, plus brillants et visiblement plus sains en 21 jours.</p>
-        <p>Texture légère, fini soyeux, parfum subtil aux notes d'argan et de fleur d'oranger. Un rituel de luxe accessible, livré chez vous avec paiement à la livraison.</p>
+        <h3>Le Pack VALON — قوة • لمعان • عناية طبيعية</h3>
+        <p>Le <strong>Pack VALON Premium</strong> est la solution naturelle pour <strong>renforcer les cheveux</strong>, <strong>réduire la chute</strong> et retrouver force, brillance et souplesse. Formule concentrée à l'huile d'argan pressée à froid du Souss marocain.</p>
+        <p>Conçu pour les femmes confrontées au climat sec, à l'eau calcaire et aux agressions quotidiennes (soleil, chaleur, traitements chimiques). Résultats visibles dès <strong>7 à 21 jours</strong> d'utilisation régulière.</p>
 
-        <h3>Ce que vous obtenez</h3>
+        <h3>Ce que contient le Pack (599 DH)</h3>
         <ul>
-          <li>1 flacon de 50ml — environ 2 mois d'utilisation</li>
+          <li>1 soin capillaire VALON — flacon premium noir &amp; or</li>
+          <li>Coffret cadeau crème avec logo VALON doré</li>
+          <li>Carte personnalisée « Merci d'avoir choisi VALON »</li>
+          <li>Calage premium pour une livraison soignée</li>
           <li>Guide d'utilisation en français et darija</li>
-          <li>Packaging premium orange et noir</li>
-          <li>Garantie satisfaction 14 jours</li>
         </ul>
+
+        <h3>Livraison &amp; paiement</h3>
+        <p><strong>599 DH</strong> (au lieu de 649 DH) · Livraison <strong>gratuite</strong> · <strong>Paiement à la livraison</strong> partout au Maroc · Garantie 14 jours.</p>
       </div>
 
       <div class="valon-tabs__panel" data-panel="ingredients">
@@ -142,20 +148,21 @@
       <div class="valon-tabs__panel" data-panel="usage">
         <h3>Mode d'emploi</h3>
         <ol>
-          <li>Appliquez 2 à 3 pipettes sur cheveux propins et humides ou secs, en insistant sur les longueurs et les pointes.</li>
-          <li>Massez délicatement pour faire pénétrer le sérum. Ne rincez pas.</li>
-          <li>Coiffez comme d'habitude. Le sérum protège également contre la chaleur du sèche-cheveux.</li>
-          <li>Utilisez 3 à 4 fois par semaine pour des résultats optimaux.</li>
+          <li>Appliquez sur cheveux propres, en insistant sur les longueurs et les pointes.</li>
+          <li>Massez délicatement pour faire pénétrer le soin. <strong>Ne rincez pas.</strong></li>
+          <li>Coiffez comme d'habitude. Protège également contre la chaleur du sèche-cheveux.</li>
+          <li>Utilisez <strong>3 à 4 fois par semaine</strong> pour des résultats optimaux.</li>
         </ol>
-        <p><em>Conseil VALON :</em> Pour un soin intensif, appliquez une dose généreuse le soir et laissez poser toute la nuit. Lavez le matin pour des cheveux transformés.</p>
+        <p><em>Conseil VALON :</em> Pour un soin intensif, appliquez une dose généreuse le soir et laissez poser toute la nuit.</p>
       </div>
 
       <div class="valon-tabs__panel" data-panel="faq">
-        <h3>Questions fréquentes sur ce produit</h3>
-        <p><strong>Convient-il aux cheveux gras ?</strong><br>Oui. La texture légère ne laisse aucun résidu gras. Appliquez principalement sur les longueurs, pas sur le cuir chevelu.</p>
-        <p><strong>Puis-je l'utiliser sur cheveux colorés ?</strong><br>Absolument. Le sérum protège la couleur et prévient la décoloration liée au soleil.</p>
-        <p><strong>Combien de temps dure un flacon ?</strong><br>Environ 2 mois avec une utilisation régulière (3-4 fois/semaine).</p>
-        <p><strong>Le paiement à la livraison est-il disponible ?</strong><br>Oui, partout au Maroc. Vous payez en espèces au livreur.</p>
+        <h3>Questions fréquentes — Pack VALON</h3>
+        <p><strong>Le paiement à la livraison est-il disponible ?</strong><br>Oui, partout au Maroc. Vous payez <strong>599 DH en espèces</strong> au livreur à la réception.</p>
+        <p><strong>Combien de temps pour voir des résultats ?</strong><br>La majorité des clientes constatent une amélioration visible dès <strong>7 à 21 jours</strong>.</p>
+        <p><strong>Convient-il aux cheveux gras ?</strong><br>Oui. Texture légère, sans résidu gras. Appliquez sur les longueurs, pas sur le cuir chevelu.</p>
+        <p><strong>Puis-je l'offrir en cadeau ?</strong><br>Oui. Le coffret premium et la carte de remerciement sont inclus.</p>
+        <p><strong>Quelles villes sont livrées ?</strong><br>Casablanca, Rabat, Marrakech, Tanger, Agadir, Fès et toutes les villes du Maroc — livraison 48 à 72h.</p>
       </div>
     </div>
   </div>
