@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Instagram — Smitha Valon Hair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c9a962;
+      --bg: #0f0f0f;
+      --card: #1a1a1a;
+      --text: #f5f0eb;
+      --muted: #a39e96;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin: 2rem 0 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(201,169,98,0.15);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.75rem; }
+    .bio-box {
+      background: #111;
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      white-space: pre-line;
+      margin-top: 0.5rem;
+    }
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .highlight {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .highlight__circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.5rem;
+      font-size: 1.4rem;
+    }
+    ul { padding-left: 1.2rem; color: var(--muted); }
+    li { margin-bottom: 0.4rem; }
+    .copy-btn {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: var(--gold);
+      color: #1a1a1a;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .back { display: inline-block; margin-bottom: 2rem; color: var(--gold); text-decoration: none; font-size: 0.9rem; }
+    .palette { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
+    .swatch { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+    .swatch span { display: block; font-size: 0.65rem; text-align: center; margin-top: 0.3rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="index.html" class="back">← Retour au site</a>
+    <h1>Guide Instagram Pro</h1>
+    <p class="subtitle">Smitha Valon Hair — Tout pour transformer votre page en vitrine professionnelle</p>
+
+    <h2>1. Photo de profil</h2>
+    <div class="card">
+      <p>Utilisez le logo <strong>assets/logo.png</strong> — fond sombre, monogramme doré. C'est cohérent avec votre identité visuelle.</p>
+    </div>
+
+    <h2>2. Bio Instagram (copier-coller)</h2>
+    <div class="card">
+      <h3>Version recommandée</h3>
+      <div class="bio-box" id="bio1">✨ Smitha Valon Hair
+💇‍♀️ Coiffure · Coloration · Lissage · Extensions
+📍 Casablanca, Maroc
+📲 Réservation WhatsApp ↓
+🌐 Lien site ↓</div>
+      <button class="copy-btn" onclick="copyBio('bio1')">Copier la bio</button>
+    </div>
+
+    <h2>3. Stories à la une (Highlights)</h2>
+    <div class="card">
+      <p>Créez 5 à 6 catégories avec des icônes cohérentes (fond doré, icône simple) :</p>
+      <div class="highlights">
+        <div class="highlight"><div class="highlight__circle">✂️</div>Services</div>
+        <div class="highlight"><div class="highlight__circle">💎</div>Avant/Après</div>
+        <div class="highlight"><div class="highlight__circle">💰</div>Tarifs</div>
+        <div class="highlight"><div class="highlight__circle">⭐</div>Avis</div>
+        <div class="highlight"><div class="highlight__circle">📍</div>Adresse</div>
+        <div class="highlight"><div class="highlight__circle">📲</div>Contact</div>
+      </div>
+    </div>
+
+    <h2>4. Grille de publications (feed)</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Alternez les contenus</strong> : 1 réalisation client → 1 conseil capillaire → 1 promo/tarif</li>
+        <li><strong>Photos avant/après</strong> : le contenu le plus engageant pour un salon</li>
+        <li><strong>Reels courts</strong> (15-30 sec) : transformations, techniques, coulisses du salon</li>
+        <li><strong>Stories quotidiennes</strong> : disponibilités, nouveaux créneaux, coulisses</li>
+        <li><strong>Même filtre/couleurs</strong> : tons chauds, dorés, élégants</li>
+      </ul>
+    </div>
+
+    <h2>5. Identité visuelle</h2>
+    <div class="card">
+      <p>Couleurs officielles de la marque :</p>
+      <div class="palette">
+        <div><div class="swatch" style="background:#0f0f0f"></div><span>Noir #0F0F0F</span></div>
+        <div><div class="swatch" style="background:#c9a962"></div><span>Or #C9A962</span></div>
+        <div><div class="swatch" style="background:#faf8f5"></div><span>Crème #FAF8F5</span></div>
+        <div><div class="swatch" style="background:#1a1a1a"></div><span>Charbon #1A1A1A</span></div>
+      </div>
+      <p style="margin-top:1rem;color:var(--muted)">Polices : <strong>Cormorant Garamond</strong> (titres) + <strong>Outfit</strong> (texte). Disponibles gratuitement sur Canva.</p>
+    </div>
+
+    <h2>6. Hashtags recommandés</h2>
+    <div class="card">
+      <div class="bio-box" id="hashtags">#SmithaValonHair #CoiffureMaroc #SalonCoiffureCasablanca #HairGoals #ColorationMaroc #LissageMaroc #ExtensionsCheveux #CoiffureMarocaine #BeautyMaroc #HairTransformation #BeforeAndAfter #CoiffeuseMaroc #HairSalon #CoiffureFemme #MarocBeauty</div>
+      <button class="copy-btn" onclick="copyBio('hashtags')">Copier les hashtags</button>
+    </div>
+
+    <h2>7. Lien en bio</h2>
+    <div class="card">
+      <p>Une fois le site déployé (GitHub Pages, Netlify, etc.), mettez le lien dans votre bio Instagram. Le site sert de page de réservation et présentation professionnelle.</p>
+    </div>
+  </div>
+  <script>
+    function copyBio(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => alert('Copié !'));
+    }
+  </script>
+</body>
+</html>
