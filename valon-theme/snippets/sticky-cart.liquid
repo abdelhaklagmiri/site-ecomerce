@@ -1,0 +1,15 @@
+{%- if product -%}
+<div class="sticky-cart" id="sticky-cart" hidden>
+  <div class="sticky-cart__inner container">
+    <div class="sticky-cart__product">
+      {%- if product.featured_image -%}
+        <img src="{{ product.featured_image | image_url: width: 80 }}" alt="" width="48" height="48" class="sticky-cart__thumb">
+      {%- endif -%}
+      <div>
+        <p class="sticky-cart__title">{{ product.title }}</p>
+        <p class="sticky-cart__price">{{ product.price | money }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

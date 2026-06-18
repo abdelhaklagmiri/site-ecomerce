@@ -1,0 +1,59 @@
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Contenu du pack</span>
+      <h2 class="heading-serif heading-lg">Tout ce que vous recevez</h2>
+      <p>Chaque élément du Pack Complet a été pensé pour une routine capillaire optimale.</p>
+    </div>
+
+    <div class="bundle-contents">
+      <div class="bundle-item">
+        <div class="bundle-item__image">
+          {%- if section.settings.serum_image != blank -%}
+            <img src="{{ section.settings.serum_image | image_url: width: 200 }}" alt="Sérum Capillaire VALON 60ml" width="100" height="100">
+          {%- endif -%}
+        </div>
+        <div>
+          <h3>Sérum Capillaire Nourrissant — 60ml</h3>
+          <p>Huile nourrissante à base d'huiles naturelles. Fortifie, sublime et stimule la croissance. Appliquez sur les longueurs et pointes — ne pas rincer.</p>
+          <p style="color:var(--color-gold);font-weight:600;margin-top:0.5rem;">Valeur : ~399 MAD</p>
+        </div>
+      </div>
+
+      <div class="bundle-item">
+        <div class="bundle-item__image">
+          {%- if section.settings.shampoo_image != blank -%}
+            <img src="{{ section.settings.shampoo_image | image_url: width: 200 }}" alt="Shampooing VALON 200ml" width="100" height="100">
+          {%- endif -%}
+        </div>
+        <div>
+          <h3>Shampooing Naturel Purifiant — 200ml</h3>
+          <p>À base d'extraits de plantes. Nettoie en profondeur, purifie le cuir chevelu et redonne force et brillance. Sans sulfates, sans parabènes.</p>
+          <p style="color:var(--color-gold);font-weight:600;margin-top:0.5rem;">Valeur : ~349 MAD</p>
+        </div>
+      </div>
+
+      <div class="bundle-item">
+        <div class="bundle-item__image">
+          <div style="width:100px;height:100px;background:var(--color-cream);display:flex;align-items:center;justify-content:center;font-size:2rem;">🎁</div>
+        </div>
+        <div>
+          <h3>Coffret Cadeau Premium</h3>
+          <p>Boîte blanche luxueuse avec intérieur doré, carte de remerciement personnalisée « Merci d'avoir choisi VALON » et emballage soigné.</p>
+          <p style="color:var(--color-gold);font-weight:600;margin-top:0.5rem;">Offert</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu Bundle",
+  "settings": [
+    { "type": "image_picker", "id": "serum_image", "label": "Image Sérum" },
+    { "type": "image_picker", "id": "shampoo_image", "label": "Image Shampooing" }
+  ],
+  "presets": [{ "name": "Contenu Bundle" }]
+}
+{% endschema %}

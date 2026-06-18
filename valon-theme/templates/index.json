@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "hero": { "type": "hero", "settings": {} },
+    "turkish-origin": { "type": "turkish-origin", "settings": {} },
+    "problem": { "type": "problem", "settings": {} },
+    "solution": { "type": "solution", "settings": {} },
+    "product-showcase": { "type": "product-showcase", "settings": {} },
+    "benefits": { "type": "benefits", "settings": {} },
+    "how-it-works": { "type": "how-it-works", "settings": {} },
+    "before-after": { "type": "before-after", "settings": {} },
+    "testimonials": { "type": "testimonials", "settings": {} },
+    "objections": { "type": "objections", "settings": {} },
+    "faq": { "type": "faq", "settings": {} },
+    "trust": { "type": "trust-section", "settings": {} },
+    "cod": { "type": "cod-section", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} },
+    "final-cta": { "type": "final-cta", "settings": {} }
+  },
+  "order": [
+    "hero",
+    "turkish-origin",
+    "problem",
+    "solution",
+    "product-showcase",
+    "benefits",
+    "how-it-works",
+    "before-after",
+    "testimonials",
+    "objections",
+    "faq",
+    "trust",
+    "cod",
+    "whatsapp",
+    "final-cta"
+  ]
+}

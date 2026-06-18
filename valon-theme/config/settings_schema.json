@@ -1,0 +1,62 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "VALON Luxury",
+    "theme_version": "1.0.0",
+    "theme_author": "VALON Hair Care",
+    "theme_documentation_url": "https://valon-shop.com",
+    "theme_support_url": "https://valon-shop.com/pages/contact"
+  },
+  {
+    "name": "Marque",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "Numéro WhatsApp (format international)",
+        "default": "212716271604",
+        "info": "Sans le + ni les espaces. Ex: 212716271604"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_message",
+        "label": "Message WhatsApp par défaut",
+        "default": "Bonjour VALON, je souhaite commander le Pack Complet."
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email de contact",
+        "default": "valon.lagmiri@gmail.com"
+      }
+    ]
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_black",
+        "label": "Noir",
+        "default": "#0a0a0a"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Or",
+        "default": "#c9a962"
+      },
+      {
+        "type": "color",
+        "id": "color_white",
+        "label": "Blanc",
+        "default": "#ffffff"
+      }
+    ]
+  }
+]

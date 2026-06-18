@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": { "type": "product-main", "settings": {} },
+    "benefits": { "type": "product-benefits", "settings": {} },
+    "ingredients": { "type": "product-ingredients", "settings": {} },
+    "how-to-use": { "type": "product-how-to-use", "settings": {} },
+    "why-valon": { "type": "product-why-valon", "settings": {} },
+    "reviews": { "type": "product-reviews", "settings": {} },
+    "faq": { "type": "product-faq", "settings": {} },
+    "cod-trust": { "type": "product-cod-trust", "settings": {} },
+    "turkish": { "type": "turkish-origin", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} }
+  },
+  "order": [
+    "main",
+    "benefits",
+    "ingredients",
+    "how-to-use",
+    "why-valon",
+    "turkish",
+    "reviews",
+    "faq",
+    "cod-trust",
+    "whatsapp"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "contact": { "type": "contact-form", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} }
+  },
+  "order": ["contact", "whatsapp"]
+}

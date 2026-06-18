@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1 class="heading-serif heading-lg">{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <p>{{ collection.description }}</p>
+      {%- endif -%}
+    </div>
+    <div class="showcase-grid" style="grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));">
+      {%- for product in collection.products -%}
+        {% render 'product-card', product: product %}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [],
+  "presets": [{ "name": "Collection" }]
+}
+{% endschema %}

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "faq": { "type": "faq", "settings": {} },
+    "objections": { "type": "objections", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} }
+  },
+  "order": ["faq", "objections", "whatsapp"]
+}

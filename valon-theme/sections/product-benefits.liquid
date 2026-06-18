@@ -1,0 +1,44 @@
+<section class="product-section product-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Bénéfices</span>
+      <h2 class="heading-serif heading-lg">Ce que ce produit fait pour vos cheveux</h2>
+    </div>
+    <div class="benefits-grid">
+      {%- for block in section.blocks -%}
+        <div class="benefit-card" {{ block.shopify_attributes }}>
+          <div class="benefit-card__icon">{{ block.settings.icon }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bénéfices Produit",
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icône", "default": "✨" },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Bénéfice" },
+        { "type": "textarea", "id": "text", "label": "Description", "default": "Description du bénéfice." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bénéfices Produit",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "🌱", "title": "Nourrit en profondeur", "text": "Pénètre la fibre capillaire pour une hydratation durable." }},
+        { "type": "benefit", "settings": { "icon": "✨", "title": "Brillance instantanée", "text": "Redonne éclat et douceur dès la première application." }},
+        { "type": "benefit", "settings": { "icon": "💪", "title": "Fortifie & protège", "text": "Renforce la structure capillaire et réduit la casse." }}
+      ]
+    }
+  ]
+}
+{% endschema %}

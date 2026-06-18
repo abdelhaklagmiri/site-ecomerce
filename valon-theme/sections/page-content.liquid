@@ -1,0 +1,21 @@
+<section class="page-content">
+  <div class="container">
+    {%- if section.settings.title != blank -%}
+      <h1 class="heading-serif">{{ section.settings.title }}</h1>
+    {%- endif -%}
+    <div class="rich-text__content">
+      {{ section.settings.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu de page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "html", "id": "content", "label": "Contenu" }
+  ],
+  "presets": [{ "name": "Contenu de page" }]
+}
+{% endschema %}
