@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#9a7f48"/>
+      <stop offset="50%" stop-color="#e6c787"/>
+      <stop offset="100%" stop-color="#9a7f48"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect x="30" y="30" width="740" height="940" fill="none" stroke="#c9a96e" stroke-width="1"/>
+  <text x="400" y="490" text-anchor="middle" font-family="Georgia, serif" font-size="68" fill="url(#gold)" letter-spacing="14">VALON</text>
+  <text x="400" y="540" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#c9a96e" letter-spacing="8">HAIR CARE</text>
+  <line x1="320" y1="570" x2="480" y2="570" stroke="#c9a96e" stroke-width="1"/>
+</svg>
