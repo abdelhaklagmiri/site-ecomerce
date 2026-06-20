@@ -30,6 +30,13 @@
   {{ content_for_header }}
 
   {{ 'base.css' | asset_url | stylesheet_tag }}
+  <style>
+    :root {
+      --color-black: {{ settings.color_black | default: '#0a0a0a' }};
+      --color-gold: {{ settings.color_gold | default: '#c9a962' }};
+      --color-white: {{ settings.color_white | default: '#ffffff' }};
+    }
+  </style>
   <script src="{{ 'theme.js' | asset_url }}" defer></script>
 
   <script>

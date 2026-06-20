@@ -13,8 +13,9 @@
           </div>
           <div>
             <h3 style="font-size:0.9rem;margin-bottom:0.25rem;">WhatsApp</h3>
-            <p style="color:var(--color-gray);font-size:0.9rem;">07 16 27 16 04</p>
-            <a href="https://wa.me/212716271604" class="btn btn--primary btn--small" style="margin-top:0.75rem;" target="_blank" rel="noopener">Ouvrir WhatsApp</a>
+            <p style="color:var(--color-gray);font-size:0.9rem;">+212 716 271 604</p>
+            {%- capture wa_contact %}{% render 'whatsapp-link' %}{% endcapture -%}
+            <a href="{{ wa_contact | strip }}" class="btn btn--primary btn--small" style="margin-top:0.75rem;" target="_blank" rel="noopener">Ouvrir WhatsApp</a>
           </div>
         </div>
 

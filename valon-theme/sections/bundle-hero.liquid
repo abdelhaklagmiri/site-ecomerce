@@ -2,7 +2,7 @@
   <div class="container">
     <span class="section-label">Offre Exclusive</span>
     <h1 class="heading-serif heading-xl">Pack Complet VALON</h1>
-    <p style="max-width:600px;margin:0 auto;opacity:0.8;">La routine capillaire complète pour des cheveux sublimes. Sérum nourrissant + Shampooing purifiant dans un coffret cadeau premium.</p>
+    <p style="max-width:600px;margin:0 auto;opacity:0.8;">La routine capillaire complète pour des cheveux sublimes. Huile capillaire 60ml + Shampooing purifiant 200ml dans un coffret cadeau premium.</p>
 
     <div class="bundle-hero__image">
       {% render 'valon-image',
@@ -17,11 +17,12 @@
 
     <span class="bundle-hero__savings">Meilleure offre — Économisez jusqu'à 150 MAD</span>
     <p class="bundle-hero__price">649 MAD</p>
-    <p style="opacity:0.7;margin-bottom:2rem;">Paiement à la livraison · Livraison gratuite</p>
+    <p style="opacity:0.7;margin-bottom:2rem;">Paiement à la livraison · Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH</p>
 
     <div class="btn-group">
       <a href="#commander" class="btn btn--primary">Commander le Pack — 649 MAD</a>
-      <a href="https://wa.me/212716271604?text=Bonjour%20VALON%2C%20je%20souhaite%20commander%20le%20Pack%20Complet%20%C3%A0%20649%20MAD." class="btn btn--outline" target="_blank" rel="noopener">Commander via WhatsApp</a>
+      {%- capture wa_pack %}{% render 'whatsapp-link', message: 'Bonjour VALON, je souhaite commander le Pack Complet à 649 MAD.' %}{% endcapture -%}
+      <a href="{{ wa_pack | strip }}" class="btn btn--outline" target="_blank" rel="noopener">Commander via WhatsApp</a>
     </div>
   </div>
 </section>

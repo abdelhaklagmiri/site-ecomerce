@@ -11,6 +11,15 @@
               width="800"
               height="800"
             >
+          {%- else -%}
+            {% render 'valon-image',
+              image: blank,
+              fallback: 'images/valon-pack-unboxing.png',
+              alt: product.title,
+              width: 800,
+              height: 800,
+              loading: 'eager'
+            %}
           {%- endif -%}
         </div>
         {%- if product.images.size > 1 -%}
@@ -25,10 +34,13 @@
       </div>
 
       <div class="product-info">
-        <p class="product-info__subtitle">VALON Hair Care — Formulé en Turquie</p>
+        <p class="product-info__subtitle">VALON Hair Care — Formulé en Turquie 🇹🇷</p>
         <h1 class="product-info__title">{{ product.title }}</h1>
         <p class="product-info__price">{{ product.price | money }}</p>
-        <div class="product-info__description">{{ product.description }}</div>
+
+        {% render 'trust-badges' %}
+
+        <div class="product-info__description" style="margin-top:1.5rem;">{{ product.description }}</div>
 
         {% render 'cod-badge' %}
 
@@ -52,7 +64,7 @@
         <div class="upsell-banner" style="margin-top:1.5rem;">
           <div class="upsell-banner__text">
             <h4>💡 Économisez avec le Pack Complet</h4>
-            <p>Sérum + Shampooing + Boîte cadeau pour seulement 649 MAD</p>
+            <p>Huile capillaire 60ml + Shampooing 200ml + Coffret cadeau — 649 MAD</p>
           </div>
           <a href="/products/valon-hair-care-pack" class="btn btn--primary btn--small">Voir le Pack</a>
         </div>
@@ -64,15 +76,15 @@
           </div>
           <div class="product-info__trust-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Livraison gratuite dans tout le Maroc
+            Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH
           </div>
           <div class="product-info__trust-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Formulé & fabriqué en Turquie 🇹🇷
+            Import direct de Turquie 🇹🇷
           </div>
           <div class="product-info__trust-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Support WhatsApp 7j/7
+            Garantie satisfaction {{ settings.guarantee_days | default: 40 }} jours
           </div>
         </div>
       </div>

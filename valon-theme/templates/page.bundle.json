@@ -7,6 +7,7 @@
     "turkish": { "type": "turkish-origin", "settings": {} },
     "testimonials": { "type": "testimonials", "settings": {} },
     "value": { "type": "bundle-value", "settings": {} },
+    "guarantee": { "type": "guarantee-section", "settings": {} },
     "faq": { "type": "faq", "settings": {} },
     "cod": { "type": "cod-section", "settings": {} },
     "whatsapp": { "type": "whatsapp-section", "settings": {} }
@@ -19,6 +20,7 @@
     "turkish",
     "testimonials",
     "value",
+    "guarantee",
     "faq",
     "cod",
     "whatsapp"

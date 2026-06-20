@@ -65,6 +65,26 @@
           <p>Absolument. Le paiement à la livraison (COD) est notre mode de paiement principal. Vous payez en espèces directement au livreur à la réception de votre colis. Zéro risque pour vous.</p>
         </div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          Quelle est la garantie satisfaction ?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Nous offrons une garantie satisfaction de {{ settings.guarantee_days | default: 40 }} jours. Si vous n'êtes pas satisfaite, contactez-nous sur WhatsApp au +212 716 271 604 et nous trouverons une solution : remboursement ou échange.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          La livraison est-elle gratuite ?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Oui. La livraison est gratuite pour toute commande à partir de {{ settings.free_shipping_threshold | default: 399 }} MAD. Le Pack Complet à 649 MAD bénéficie automatiquement de la livraison gratuite partout au Maroc.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

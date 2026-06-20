@@ -38,6 +38,18 @@
         "id": "contact_email",
         "label": "Email de contact",
         "default": "valon.lagmiri@gmail.com"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Seuil livraison gratuite (MAD)",
+        "default": "399"
+      },
+      {
+        "type": "text",
+        "id": "guarantee_days",
+        "label": "Garantie satisfaction (jours)",
+        "default": "40"
       }
     ]
   },

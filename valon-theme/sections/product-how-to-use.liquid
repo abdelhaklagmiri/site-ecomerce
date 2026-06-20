@@ -2,34 +2,36 @@
   <div class="container">
     <div class="how-to-use">
       <div class="how-to-use__image">
-        {%- if section.settings.image != blank -%}
-          <img src="{{ section.settings.image | image_url: width: 600 }}" alt="Mode d'utilisation VALON" loading="lazy" width="600" height="600">
-        {%- else -%}
-          <div style="aspect-ratio:1;background:var(--color-gray-light);display:flex;align-items:center;justify-content:center;color:var(--color-gray);">Image application produit</div>
-        {%- endif -%}
+        {% render 'valon-image',
+          image: section.settings.image,
+          fallback: 'images/valon-serum-application.png',
+          alt: 'Application huile capillaire VALON',
+          width: 600,
+          height: 600
+        %}
       </div>
       <div>
         <span class="section-label">Mode d'utilisation</span>
         <h2 class="heading-serif heading-lg">Comment utiliser ce produit</h2>
 
         {%- if product.handle == 'shampooing-valon' -%}
-          <ol style="padding-left:1.25rem;list-style:decimal;margin-top:1.5rem;">
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Humidifiez vos cheveux à l'eau tiède</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Appliquez une noisette de shampooing sur le cuir chevelu</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Massez délicatement en mouvements circulaires pendant 2 minutes</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Laissez poser 1 minute pour une action en profondeur</li>
-            <li style="color:var(--color-gray);">Rincez abondamment à l'eau tiède</li>
+          <ol class="how-to-use__steps">
+            <li>Humidifiez vos cheveux à l'eau tiède</li>
+            <li>Appliquez une noisette de shampooing sur le cuir chevelu</li>
+            <li>Massez délicatement en mouvements circulaires pendant 2 minutes</li>
+            <li>Laissez poser 1 minute pour une action en profondeur</li>
+            <li>Rincez abondamment à l'eau tiède</li>
           </ol>
-          <p style="margin-top:1rem;font-size:0.85rem;color:var(--color-gold);font-weight:600;">Fréquence recommandée : 2 à 3 fois par semaine</p>
+          <p class="how-to-use__freq">Fréquence recommandée : 2 à 3 fois par semaine</p>
         {%- else -%}
-          <ol style="padding-left:1.25rem;list-style:decimal;margin-top:1.5rem;">
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Sur cheveux humides ou secs, déposez 2-3 pressions dans la paume</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Frottez vos mains pour réchauffer le sérum</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Appliquez sur les longueurs et pointes en massant doucement</li>
-            <li style="margin-bottom:1rem;color:var(--color-gray);">Pour le cuir chevelu : massez avec le bout des doigts</li>
-            <li style="color:var(--color-gray);">Ne rincez pas — laissez agir toute la journée ou la nuit</li>
+          <ol class="how-to-use__steps">
+            <li>Sur cheveux humides ou secs, déposez 2-3 pressions dans la paume</li>
+            <li>Frottez vos mains pour réchauffer l'huile capillaire</li>
+            <li>Appliquez sur les longueurs et pointes en massant doucement</li>
+            <li>Pour le cuir chevelu : massez avec le bout des doigts</li>
+            <li>Ne rincez pas — laissez agir toute la journée ou la nuit</li>
           </ol>
-          <p style="margin-top:1rem;font-size:0.85rem;color:var(--color-gold);font-weight:600;">Fréquence recommandée : quotidien ou 3-4 fois par semaine</p>
+          <p class="how-to-use__freq">Fréquence recommandée : quotidien ou 3-4 fois par semaine</p>
         {%- endif -%}
       </div>
     </div>

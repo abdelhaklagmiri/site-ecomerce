@@ -17,6 +17,13 @@
           </div>
         {% endfor %}
         <p style="text-align:right;font-size:1.25rem;margin:1.5rem 0;"><strong>{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</strong></p>
+        {%- assign threshold = settings.free_shipping_threshold | default: 399 | times: 100 -%}
+        {%- if cart.total_price >= threshold -%}
+          <p style="text-align:right;color:var(--color-gold);font-size:0.9rem;margin-bottom:1rem;">✓ Livraison gratuite incluse</p>
+        {%- else -%}
+          {%- assign remaining = threshold | minus: cart.total_price | money -%}
+          <p style="text-align:right;color:var(--color-gray);font-size:0.85rem;margin-bottom:1rem;">Ajoutez {{ remaining }} pour la livraison gratuite (dès {{ settings.free_shipping_threshold | default: 399 }} DH)</p>
+        {%- endif -%}
         {% render 'cod-badge' %}
         <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
           <button type="submit" name="update" class="btn btn--outline btn--small" style="color:var(--color-black);border-color:var(--color-black);">Mettre à jour</button>

@@ -1,0 +1,7 @@
+{%- comment -%}
+  Builds WhatsApp URL from theme settings.
+  Optional: pass `message` for a custom pre-filled text.
+{%- endcomment -%}
+{%- assign wa_number = settings.whatsapp_number | default: '212716271604' -%}
+{%- assign wa_text = message | default: settings.whatsapp_message | default: 'Bonjour VALON, je souhaite commander.' -%}
+https://wa.me/{{ wa_number }}?text={{ wa_text | url_encode }}

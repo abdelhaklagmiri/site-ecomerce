@@ -14,3 +14,35 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page_title | escape }}">
 <meta name="twitter:description" content="{{ page_description | default: shop.description | escape }}">
+
+{%- if request.page_type == 'product' and product -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 300 | json }},
+  "brand": { "@type": "Brand", "name": "VALON Hair Care" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "MAD",
+    "price": "{{ product.price | money_without_currency | strip }}",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ product.url }}"
+  }
+}
+</script>
+{%- endif -%}
+
+{%- if request.page_type == 'index' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VALON Hair Care",
+  "url": "https://valon-shop.com",
+  "email": "valon.lagmiri@gmail.com",
+  "description": "Routine capillaire premium formulée en Turquie. Huile capillaire + Shampooing naturels. Livraison Maroc. Paiement à la livraison."
+}
+</script>
+{%- endif -%}

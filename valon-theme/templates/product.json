@@ -1,14 +1,26 @@
 {
   "sections": {
     "main": { "type": "product-main", "settings": {} },
-    "benefits": { "type": "product-benefits", "settings": {} },
+    "benefits": {
+      "type": "product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "🌿", "title": "Nourrit en profondeur", "text": "Huiles naturelles qui pénètrent la fibre capillaire pour une hydratation durable et une chevelure plus souple." }},
+        "b2": { "type": "benefit", "settings": { "icon": "💪", "title": "Renforce & réduit la chute", "text": "Formule turque enrichie pour fortifier les racines, limiter la casse et stimuler la repousse visible." }},
+        "b3": { "type": "benefit", "settings": { "icon": "✨", "title": "Brillance premium", "text": "Texture dorée luxueuse qui sublime les longueurs et redonne éclat dès les premières applications." }},
+        "b4": { "type": "benefit", "settings": { "icon": "🧴", "title": "Routine complète", "text": "Huile capillaire + Shampooing conçus pour agir en synergie — résultats optimaux avec le Pack Complet." }},
+        "b5": { "type": "benefit", "settings": { "icon": "🇹🇷", "title": "Qualité turque", "text": "Formulé et fabriqué en Turquie, importé directement pour garantir authenticité et efficacité." }},
+        "b6": { "type": "benefit", "settings": { "icon": "🛡️", "title": "Garantie 40 jours", "text": "Satisfaite ou remboursée sous 40 jours. Essayez VALON sans risque avec le paiement à la livraison." }}
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"]
+    },
     "ingredients": { "type": "product-ingredients", "settings": {} },
     "how-to-use": { "type": "product-how-to-use", "settings": {} },
     "why-valon": { "type": "product-why-valon", "settings": {} },
+    "turkish": { "type": "turkish-origin", "settings": {} },
     "reviews": { "type": "product-reviews", "settings": {} },
+    "guarantee": { "type": "guarantee-section", "settings": {} },
     "faq": { "type": "product-faq", "settings": {} },
     "cod-trust": { "type": "product-cod-trust", "settings": {} },
-    "turkish": { "type": "turkish-origin", "settings": {} },
     "whatsapp": { "type": "whatsapp-section", "settings": {} }
   },
   "order": [
@@ -19,6 +31,7 @@
     "why-valon",
     "turkish",
     "reviews",
+    "guarantee",
     "faq",
     "cod-trust",
     "whatsapp"

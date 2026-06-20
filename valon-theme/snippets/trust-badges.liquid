@@ -1,18 +1,21 @@
+{%- assign shipping_threshold = settings.free_shipping_threshold | default: '399' -%}
+{%- assign guarantee_days = settings.guarantee_days | default: '40' -%}
+
 <div class="trust-badges">
   <div class="trust-badges__item">
-    <span class="trust-badges__icon">🇹🇷</span>
-    <span>Formulé en Turquie</span>
-  </div>
-  <div class="trust-badges__item">
-    <span class="trust-badges__icon">🌿</span>
-    <span>Ingrédients naturels</span>
-  </div>
-  <div class="trust-badges__item">
-    <span class="trust-badges__icon">✓</span>
-    <span>Sans sulfates</span>
-  </div>
-  <div class="trust-badges__item">
     <span class="trust-badges__icon">🚚</span>
-    <span>Livraison Maroc</span>
+    <span>Livraison gratuite dès {{ shipping_threshold }} DH</span>
+  </div>
+  <div class="trust-badges__item">
+    <span class="trust-badges__icon">💵</span>
+    <span>Paiement à la livraison</span>
+  </div>
+  <div class="trust-badges__item">
+    <span class="trust-badges__icon">🇹🇷</span>
+    <span>Import direct Turquie</span>
+  </div>
+  <div class="trust-badges__item">
+    <span class="trust-badges__icon">🛡️</span>
+    <span>Garantie {{ guarantee_days }} jours</span>
   </div>
 </div>
