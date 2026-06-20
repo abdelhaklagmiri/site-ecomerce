@@ -12,6 +12,7 @@
         "cta_secondary_url": "/collections/all"
       }
     },
+    "trust-bar": { "type": "trust-bar", "settings": {} },
     "turkish-origin": { "type": "turkish-origin", "settings": {} },
     "problem": { "type": "problem", "settings": {} },
     "solution": { "type": "solution", "settings": {} },
@@ -30,6 +31,7 @@
   },
   "order": [
     "hero",
+    "trust-bar",
     "turkish-origin",
     "problem",
     "solution",

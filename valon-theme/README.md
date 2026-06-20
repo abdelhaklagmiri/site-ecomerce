@@ -1,73 +1,32 @@
-# VALON Hair Care — Luxury Shopify Theme
+# VALON Luxury — Thème Shopify 2.0
 
-Thème Shopify 2.0 premium pour **VALON Hair Care**, marque capillaire de luxe pour le marché marocain.
+Thème premium pour **VALON Hair Care** — marché marocain, français, COD.
 
-## Caractéristiques
+## Import
 
-- Design luxe noir / or / blanc
-- Mobile-first, haute conversion
-- Paiement à la livraison (COD) intégré
-- WhatsApp support flottant
-- Section origine turque (trust building)
-- Homepage complète (15 sections)
-- Pages produit, bundle, about, contact, FAQ, policies
-- Copywriting français complet
-- Documentation CRO & Facebook Ads
-
-## Structure
-
-```
-valon-theme/
-├── assets/          # CSS + JS
-├── config/          # Paramètres thème
-├── docs/            # Guides installation, CRO, ads
-├── layout/          # Layout principal
-├── locales/         # Traductions FR
-├── sections/        # 30+ sections
-├── snippets/        # Composants réutilisables
-└── templates/       # Templates pages
+```bash
+zip -r ../valon-theme-final.zip assets config layout locales sections snippets templates
 ```
 
-## Installation rapide
+Shopify Admin → Thèmes → Importer → Publier.
 
-1. Zipper le dossier `valon-theme`
-2. Shopify Admin → Thèmes → Importer
-3. Suivre `docs/SETUP-GUIDE.md`
+## Sections (41)
+
+Hero · Trust Bar · Origine Turque · Problème · Solution · Vitrine · Bénéfices · Mode d'emploi · Avant/Après · Témoignages · Objections · Garantie 40j · FAQ · Confiance · COD · WhatsApp · CTA Final · + sections produit et pages.
 
 ## Documentation
 
 | Guide | Description |
 |-------|-------------|
-| [SETUP-GUIDE.md](docs/SETUP-GUIDE.md) | Installation complète |
-| [IMAGE-GUIDE.md](docs/IMAGE-GUIDE.md) | Mapping images → sections |
-| [PRODUCT-COPY.md](docs/PRODUCT-COPY.md) | Descriptions produits |
-| [CRO-RECOMMENDATIONS.md](docs/CRO-RECOMMENDATIONS.md) | Optimisation conversion |
-| [FACEBOOK-ADS.md](docs/FACEBOOK-ADS.md) | Angles publicitaires Meta |
+| [SHOPIFY-ADMIN-CHECKLIST.md](docs/SHOPIFY-ADMIN-CHECKLIST.md) | Configuration Shopify étape par étape |
+| [TEXTES-COPIER-COLLER.md](docs/TEXTES-COPIER-COLLER.md) | Textes produits prêts à coller |
+| [IMAGE-GUIDE.md](docs/IMAGE-GUIDE.md) | Images → sections |
+| [PRODUCT-COPY.md](docs/PRODUCT-COPY.md) | Copywriting détaillé |
+| [FACEBOOK-ADS.md](docs/FACEBOOK-ADS.md) | Publicités Meta |
+| [CRO-RECOMMENDATIONS.md](docs/CRO-RECOMMENDATIONS.md) | Conversion |
 
-## Brand Info
+## Brand
 
-- **Marque :** VALON Hair Care
-- **Domaine :** https://valon-shop.com
-- **Email :** valon.lagmiri@gmail.com
-- **WhatsApp :** 07 16 27 16 04
 - **Pack Complet :** 649 MAD
-- **Paiement :** COD (Paiement à la livraison)
-
-## Produits
-
-1. VALON Hair Growth Serum — 60ml
-2. VALON Strengthening Shampoo — 200ml
-3. Pack Complet (Bundle) — 649 MAD
-
-## Couleurs
-
-| Couleur | Hex |
-|---------|-----|
-| Noir | `#0a0a0a` |
-| Or | `#c9a962` |
-| Blanc | `#ffffff` |
-
-## Typographie
-
-- **Titres :** Cormorant Garamond (serif)
-- **Corps :** Montserrat (sans-serif)
+- **Couleurs :** #0a0a0a · #c9a962 · #ffffff
+- **WhatsApp :** +212 716 271 604

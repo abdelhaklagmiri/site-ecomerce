@@ -1191,6 +1191,19 @@ body:has(.sticky-cart.is-visible) .whatsapp-float { bottom: 5.5rem; }
 }
 .cod-badge__text span { font-size: 0.75rem; color: var(--color-gray); }
 
+/* Trust Bar (homepage strip) */
+.trust-bar {
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-gray-light);
+  padding: 1rem 0;
+}
+.trust-bar .trust-badges { gap: 0.75rem; }
+.trust-bar .trust-badges__item {
+  background: var(--color-white);
+  font-size: 0.7rem;
+  padding: 0.5rem 0.75rem;
+}
+
 /* Trust Badges */
 .trust-badges {
   display: flex;
@@ -1405,4 +1418,21 @@ body:has(.sticky-cart.is-visible) .whatsapp-float { bottom: 5.5rem; }
 /* Print */
 @media print {
   .whatsapp-float, .sticky-cart, .announcement-bar, .site-header { display: none; }
+}
+
+/* Mobile optimization */
+@media (max-width: 767px) {
+  .btn-group { flex-direction: column; width: 100%; }
+  .btn-group .btn { width: 100%; }
+  .hero__content { padding: 2.5rem 0 3rem; }
+  .hero__trust { flex-direction: column; gap: 0.5rem; align-items: center; }
+  .trust-bar .trust-badges { flex-direction: column; align-items: stretch; }
+  .trust-bar .trust-badges__item { justify-content: center; }
+  .product-info .trust-badges { flex-direction: column; align-items: stretch; }
+  .guarantee-box { padding: 1.5rem; text-align: center; }
+  .guarantee-box__list { align-items: center; }
+  .cod-steps { grid-template-columns: 1fr; }
+  .bundle-value__comparison { flex-direction: column; }
+  .upsell-banner { flex-direction: column; text-align: center; }
+  .whatsapp-section { padding: 3rem 0; }
 }
