@@ -1,58 +1,35 @@
-# VALON Hair Care — Configuration Shopify
+# VALON — Configuration Shopify (référence rapide)
 
-## 1. Importer le thème
-Uploadez `valon-theme-final.zip` dans **Boutique en ligne → Thèmes → Importer**.
+## Handles officiels (ne pas modifier)
 
-## 2. Images produit (incluses dans le thème)
-Le thème inclut vos photos VALON dans `assets/images/`. Elles s'affichent automatiquement.
+| Élément | Handle |
+|---------|--------|
+| Pack Complet | `valon-hair-care-pack` |
+| Huile 60ml | `huile-capillaire-valon` |
+| Shampooing 200ml | `shampooing-valon` |
+| Page Pack | `pack-complet` |
+| À Propos | `a-propos` |
+| Contact | `contact` |
+| FAQ | `faq` |
+| Livraison | `livraison` |
+| Remboursement | `politique-remboursement` |
+| Confidentialité | `politique-confidentialite` |
+| CGV | `conditions-generales` |
 
-Pour remplacer par des photos haute résolution : **Contenu → Fichiers**, puis assignez dans chaque section :
+## Guides détaillés
 
-| Photo | Section Shopify |
-|-------|----------------|
-| Splash huile dorée + noix d'argan | Accueil → Hero |
-| Mains appliquant le sérum | Accueil → Solution + Produit Sérum → Mode d'utilisation |
-| Produits fond sombre (labels) | Accueil → Vitrine + Images produits |
-| Boîte cadeau unboxing | Page Pack Complet → Hero |
-| Collage lifestyle 4 femmes | Page À Propos → Lifestyle |
-| Logo depuis packaging | Thème → Marque → Logo VALON |
+| Guide | Contenu |
+|-------|---------|
+| **[SHOPIFY-ADMIN-CHECKLIST.md](SHOPIFY-ADMIN-CHECKLIST.md)** | Checklist étape par étape — où cliquer, quoi créer |
+| **[TEXTES-COPIER-COLLER.md](TEXTES-COPIER-COLLER.md)** | Tous les textes produits prêts à coller |
+| **[PRODUCT-COPY.md](PRODUCT-COPY.md)** | Copywriting détaillé |
+| **[IMAGE-GUIDE.md](IMAGE-GUIDE.md)** | Mapping images → sections |
+| **[FACEBOOK-ADS.md](FACEBOOK-ADS.md)** | Angles publicitaires Meta |
 
-## 3. Créer les produits
+## Import thème
 
-### Pack Complet VALON — 649 MAD (déjà sur valon-shop.com)
-- Handle : `valon-hair-care-pack`
-- Titre : Pack Complet VALON Hair Care
+```bash
+cd valon-theme && zip -r ../valon-theme-final.zip assets config layout locales sections snippets templates
+```
 
-### VALON Hair Growth Serum — 399 MAD
-- Handle : `serum-capillaire-valon`
-- Titre : VALON Hair Growth Serum — Sérum Capillaire Nourrissant 60ml
-
-### VALON Strengthening Shampoo — 349 MAD
-- Handle : `shampooing-valon`
-- Titre : VALON Strengthening Shampoo — Shampooing Naturel Purifiant 200ml
-
-Descriptions complètes : `docs/PRODUCT-COPY.md`
-
-## 4. Pages (assigner templates)
-
-| Page | Template |
-|------|----------|
-| pack-complet | page.bundle |
-| a-propos | page.about |
-| contact | page.contact |
-| faq | page.faq |
-| livraison | page.shipping-policy |
-| politique-confidentialite | page.privacy-policy |
-| politique-remboursement | page.refund-policy |
-| conditions-generales | page.terms |
-
-## 5. Paiement COD
-**Paramètres → Paiements → Paiement à la livraison** — activer.
-
-## 6. Contact
-- WhatsApp : 07 16 27 16 04
-- Email : valon.lagmiri@gmail.com
-- Domaine : valon-shop.com
-
-## 7. Langue
-**Paramètres → Langues** — Français comme langue principale.
+Puis : Shopify Admin → Thèmes → Importer → Publier.

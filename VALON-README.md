@@ -1,3 +1,9 @@
+# Guide complet : [valon-theme/docs/SHOPIFY-ADMIN-CHECKLIST.md](valon-theme/docs/SHOPIFY-ADMIN-CHECKLIST.md)
+
+## Textes prêts à coller : [valon-theme/docs/TEXTES-COPIER-COLLER.md](valon-theme/docs/TEXTES-COPIER-COLLER.md)
+
+---
+
 # VALON Hair Care — Boutique Shopify Premium
 
 Boutique française haut de gamme pour le marché marocain. Thème complet, prêt à publier et lancer des publicités Facebook.
