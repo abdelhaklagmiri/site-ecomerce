@@ -9,9 +9,13 @@
     <div class="bundle-contents">
       <div class="bundle-item">
         <div class="bundle-item__image">
-          {%- if section.settings.serum_image != blank -%}
-            <img src="{{ section.settings.serum_image | image_url: width: 200 }}" alt="Sérum Capillaire VALON 60ml" width="100" height="100">
-          {%- endif -%}
+          {% render 'valon-image',
+            image: section.settings.serum_image,
+            fallback: 'images/valon-products-dark-1.jpg',
+            alt: 'VALON Hair Growth Serum 60ml',
+            width: 100,
+            height: 100
+          %}
         </div>
         <div>
           <h3>Sérum Capillaire Nourrissant — 60ml</h3>
@@ -22,9 +26,13 @@
 
       <div class="bundle-item">
         <div class="bundle-item__image">
-          {%- if section.settings.shampoo_image != blank -%}
-            <img src="{{ section.settings.shampoo_image | image_url: width: 200 }}" alt="Shampooing VALON 200ml" width="100" height="100">
-          {%- endif -%}
+          {% render 'valon-image',
+            image: section.settings.shampoo_image,
+            fallback: 'images/valon-products-dark-2.jpg',
+            alt: 'VALON Strengthening Shampoo 200ml',
+            width: 100,
+            height: 100
+          %}
         </div>
         <div>
           <h3>Shampooing Naturel Purifiant — 200ml</h3>
@@ -35,7 +43,13 @@
 
       <div class="bundle-item">
         <div class="bundle-item__image">
-          <div style="width:100px;height:100px;background:var(--color-cream);display:flex;align-items:center;justify-content:center;font-size:2rem;">🎁</div>
+          {% render 'valon-image',
+            image: section.settings.gift_image,
+            fallback: 'images/valon-pack-unboxing.png',
+            alt: 'Coffret cadeau VALON Hair Care',
+            width: 100,
+            height: 100
+          %}
         </div>
         <div>
           <h3>Coffret Cadeau Premium</h3>
@@ -52,7 +66,8 @@
   "name": "Contenu Bundle",
   "settings": [
     { "type": "image_picker", "id": "serum_image", "label": "Image Sérum" },
-    { "type": "image_picker", "id": "shampoo_image", "label": "Image Shampooing" }
+    { "type": "image_picker", "id": "shampoo_image", "label": "Image Shampooing" },
+    { "type": "image_picker", "id": "gift_image", "label": "Image Coffret" }
   ],
   "presets": [{ "name": "Contenu Bundle" }]
 }

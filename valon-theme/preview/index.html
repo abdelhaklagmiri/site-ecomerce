@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALON Hair Care — Aperçu Boutique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --black:#0a0a0a; --gold:#c9a962; --white:#fff; --cream:#faf8f5; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Montserrat',sans-serif; color:var(--black); }
+    img { max-width:100%; height:auto; display:block; }
+    .announcement { background:var(--black); color:var(--gold); text-align:center; padding:10px; font-size:12px; letter-spacing:.08em; }
+    .header { background:var(--black); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+    .hero { position:relative; color:var(--white); text-align:center; overflow:hidden; }
+    .hero__bg img { width:100%; max-height:70vh; object-fit:cover; }
+    .hero__content { position:relative; padding:48px 24px 64px; background:linear-gradient(180deg,transparent,rgba(10,10,10,.95)); margin-top:-120px; }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.5rem); margin:16px 0; }
+    .hero h1 em { color:var(--gold); font-style:italic; }
+    .hero p { max-width:600px; margin:0 auto 24px; opacity:.85; line-height:1.7; }
+    .label { color:var(--gold); font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+    .btn { display:inline-block; padding:14px 28px; background:var(--gold); color:var(--black); font-weight:600; font-size:12px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; margin:8px; }
+    .btn-outline { background:transparent; border:2px solid var(--gold); color:var(--white); }
+    .section { padding:64px 24px; max-width:1100px; margin:0 auto; }
+    .section--cream { background:var(--cream); max-width:none; }
+    .section--cream .inner { max-width:1100px; margin:0 auto; }
+    .section h2 { font-family:'Cormorant Garamond',serif; font-size:2rem; text-align:center; margin-bottom:16px; }
+    .grid { display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:32px; }
+    .card { background:var(--black); color:var(--white); overflow:hidden; }
+    .card img { width:100%; aspect-ratio:1; object-fit:cover; }
+    .card__body { padding:24px; }
+    .card h3 { font-family:'Cormorant Garamond',serif; color:var(--gold); margin-bottom:8px; }
+    .turkish { display:flex; gap:24px; align-items:center; background:var(--cream); padding:32px; border:1px solid rgba(201,169,98,.3); }
+    .turkish .flag { font-size:48px; }
+    .price { font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--gold); text-align:center; margin:16px 0; }
+    .footer { background:var(--black); color:rgba(255,255,255,.7); padding:48px 24px; text-align:center; font-size:14px; }
+    .wa { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:12px 20px; border-radius:50px; font-weight:600; font-size:13px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="announcement">✦ VALON Hair Care — Pack Complet 649 MAD — Livraison gratuite Maroc — Paiement à la livraison ✦</div>
+  <header class="header">
+    <img src="../assets/valon-logo.svg" alt="VALON Hair Care" height="36">
+    <nav style="color:#fff;font-size:12px;letter-spacing:.1em;">PACK COMPLET · PRODUITS · À PROPOS · CONTACT</nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="../assets/images/valon-hero-splash.png" alt="VALON Hair Growth Serum et Strengthening Shampoo">
+    </div>
+    <div class="hero__content">
+      <p class="label">Routine Capillaire Premium — Formulé en Turquie 🇹🇷</p>
+      <h1>Sublimez vos cheveux avec <em>l'or liquide</em> de VALON</h1>
+      <p>Pack Complet : Sérum Capillaire Nourrissant 60ml + Shampooing Naturel Purifiant 200ml. Importé de Turquie pour le marché marocain.</p>
+      <a class="btn" href="#">Commander le Pack — 649 MAD</a>
+      <a class="btn btn-outline" href="#">Découvrir nos produits</a>
+    </div>
+  </section>
+
+  <div class="section--cream"><div class="section inner">
+    <div class="turkish">
+      <div class="flag">🇹🇷</div>
+      <div>
+        <p class="label">Origine & Qualité</p>
+        <h2>Formulé & Fabriqué en Turquie</h2>
+        <p style="margin-top:8px;color:#666;">VALON Hair Care puise dans l'expertise turque en cosmétique capillaire naturelle. Import direct — qualité internationale.</p>
+      </div>
+    </div>
+  </div></div>
+
+  <section class="section">
+    <p class="label" style="text-align:center;">Nos produits</p>
+    <h2>La routine VALON complète</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="../assets/images/valon-products-dark-1.jpg" alt="VALON Hair Growth Serum 60ml">
+        <div class="card__body">
+          <h3>VALON Hair Growth Serum</h3>
+          <p>Sérum Capillaire Nourrissant — 60ml. Huile nourrissante à base d'huiles naturelles. Stimule la repousse.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../assets/images/valon-products-dark-2.jpg" alt="VALON Strengthening Shampoo 200ml">
+        <div class="card__body">
+          <h3>VALON Strengthening Shampoo</h3>
+          <p>Shampooing Naturel Purifiant — 200ml. Sans sulfates. Nettoie en profondeur le cuir chevelu.</p>
+        </div>
+      </div>
+    </div>
+    <p class="price">Pack Complet — 649 MAD</p>
+    <p style="text-align:center;color:#666;">Paiement à la livraison · valon-shop.com</p>
+  </section>
+
+  <footer class="footer">
+    <p>VALON Hair Care · valon.lagmiri@gmail.com · 07 16 27 16 04</p>
+    <p style="margin-top:8px;opacity:.6;">La routine qui te sublime.</p>
+  </footer>
+  <a class="wa" href="https://wa.me/212716271604">WhatsApp</a>
+</body>
+</html>

@@ -1,9 +1,6 @@
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="site-logo">
-      VALON
-      <span>Hair Care</span>
-    </a>
+    {% render 'valon-logo', section: section %}
 
     <nav class="site-nav" aria-label="Navigation principale">
       <ul>
@@ -46,6 +43,13 @@
 {% schema %}
 {
   "name": "En-tête",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo VALON",
+      "info": "Uploader le logo depuis vos photos produit. SVG par défaut si vide."
+    }
+  ]
 }
 {% endschema %}

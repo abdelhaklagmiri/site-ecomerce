@@ -2,17 +2,13 @@
   <div class="container">
     <div class="solution">
       <div class="solution__image">
-        {%- if section.settings.image != blank -%}
-          <img
-            src="{{ section.settings.image | image_url: width: 800 }}"
-            alt="Application du sérum VALON"
-            loading="lazy"
-            width="800"
-            height="800"
-          >
-        {%- else -%}
-          <div style="aspect-ratio:1;background:var(--color-cream);"></div>
-        {%- endif -%}
+        {% render 'valon-image',
+          image: section.settings.image,
+          fallback: section.settings.fallback_image,
+          alt: 'Application du sérum capillaire VALON — texture dorée',
+          width: 800,
+          height: 800
+        %}
       </div>
       <div class="solution__content">
         <span class="section-label">La solution</span>
@@ -40,6 +36,17 @@
       "id": "image",
       "label": "Image",
       "info": "Utiliser l'image mains appliquant le sérum doré"
+    },
+    {
+      "type": "select",
+      "id": "fallback_image",
+      "label": "Image par défaut",
+      "options": [
+        { "value": "images/valon-serum-application.png", "label": "Application du sérum" },
+        { "value": "images/valon-lifestyle.png", "label": "Lifestyle VALON" },
+        { "value": "images/valon-hero-splash.png", "label": "Produits splash doré" }
+      ],
+      "default": "images/valon-serum-application.png"
     }
   ],
   "presets": [{ "name": "Section Solution" }]

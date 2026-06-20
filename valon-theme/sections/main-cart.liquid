@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container page-content">
+    <h1 class="heading-serif heading-lg">{{ 'cart.general.title' | t }}</h1>
+    {% if cart.item_count == 0 %}
+      <p class="text-muted" style="margin:1.5rem 0 2rem;">{{ 'cart.general.empty' | t }}</p>
+      <a href="/collections/all" class="btn btn--primary">{{ 'cart.general.continue_shopping' | t }}</a>
+    {% else %}
+      <form action="{{ routes.cart_url }}" method="post" style="margin-top:2rem;">
+        {% for item in cart.items %}
+          <div style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--color-gray-light);align-items:center;">
+            {% if item.image %}<img src="{{ item.image | image_url: width: 80 }}" alt="" width="64" height="64" style="object-fit:cover;">{% endif %}
+            <div style="flex:1;">
+              <strong>{{ item.product.title }}</strong>
+              <p class="text-muted" style="font-size:0.85rem;">{{ item.line_price | money }}</p>
+            </div>
+            <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" style="width:60px;padding:0.5rem;text-align:center;">
+          </div>
+        {% endfor %}
+        <p style="text-align:right;font-size:1.25rem;margin:1.5rem 0;"><strong>{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</strong></p>
+        {% render 'cod-badge' %}
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <button type="submit" name="update" class="btn btn--outline btn--small" style="color:var(--color-black);border-color:var(--color-black);">Mettre à jour</button>
+          <button type="submit" name="checkout" class="btn btn--primary">{{ 'cart.general.checkout' | t }}</button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+{% schema %}{"name":"Panier","settings":[],"presets":[{"name":"Panier"}]}{% endschema %}

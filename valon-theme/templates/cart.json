@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": { "type": "main-cart", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} }
+  },
+  "order": ["main", "whatsapp"]
+}

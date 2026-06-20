@@ -1,0 +1,15 @@
+{% layout none %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>{{ shop.name }} — Carte cadeau</title>
+  {{ content_for_header }}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+</head>
+<body style="text-align:center;padding:3rem;background:#0a0a0a;color:#fff;">
+  <img src="{{ 'valon-logo.svg' | asset_url }}" alt="VALON" width="160" style="margin:0 auto 2rem;">
+  <p style="font-size:1.5rem;color:#c9a962;">{{ gift_card.balance | money }}</p>
+  <p style="font-family:monospace;letter-spacing:0.15em;margin-top:1rem;">{{ gift_card.code }}</p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" role="img" aria-label="VALON Hair Care">
+  <text x="140" y="34" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="600" fill="#c9a962" letter-spacing="10">VALON</text>
+  <line x1="72" y1="44" x2="108" y2="44" stroke="#c9a962" stroke-width="0.75" opacity="0.9"/>
+  <text x="140" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#c9a962" letter-spacing="5" opacity="0.95">Hair Care</text>
+  <line x1="172" y1="44" x2="208" y2="44" stroke="#c9a962" stroke-width="0.75" opacity="0.9"/>
+</svg>

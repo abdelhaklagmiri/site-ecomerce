@@ -5,9 +5,14 @@
     <p style="max-width:600px;margin:0 auto;opacity:0.8;">La routine capillaire complète pour des cheveux sublimes. Sérum nourrissant + Shampooing purifiant dans un coffret cadeau premium.</p>
 
     <div class="bundle-hero__image">
-      {%- if section.settings.image != blank -%}
-        <img src="{{ section.settings.image | image_url: width: 800 }}" alt="Pack Complet VALON Hair Care" loading="eager" width="800" height="600">
-      {%- endif -%}
+      {% render 'valon-image',
+        image: section.settings.image,
+        fallback: 'images/valon-pack-unboxing.png',
+        alt: 'Pack Complet VALON Hair Care — coffret cadeau premium',
+        width: 800,
+        height: 600,
+        loading: 'eager'
+      %}
     </div>
 
     <span class="bundle-hero__savings">Meilleure offre — Économisez jusqu'à 150 MAD</span>

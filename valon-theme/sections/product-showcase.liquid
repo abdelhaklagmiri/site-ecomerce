@@ -9,9 +9,13 @@
     <div class="showcase-grid">
       <div class="showcase-card">
         <div class="showcase-card__image">
-          {%- if section.settings.serum_image != blank -%}
-            <img src="{{ section.settings.serum_image | image_url: width: 600 }}" alt="VALON Sérum Capillaire 60ml" loading="lazy" width="600" height="600">
-          {%- endif -%}
+          {% render 'valon-image',
+            image: section.settings.serum_image,
+            fallback: 'images/valon-products-dark-1.jpg',
+            alt: 'VALON Hair Growth Serum — Sérum Capillaire Nourrissant 60ml',
+            width: 600,
+            height: 600
+          %}
         </div>
         <div class="showcase-card__body">
           <h3>Sérum Capillaire Nourrissant</h3>
@@ -23,9 +27,13 @@
 
       <div class="showcase-card">
         <div class="showcase-card__image">
-          {%- if section.settings.shampoo_image != blank -%}
-            <img src="{{ section.settings.shampoo_image | image_url: width: 600 }}" alt="VALON Shampooing 200ml" loading="lazy" width="600" height="600">
-          {%- endif -%}
+          {% render 'valon-image',
+            image: section.settings.shampoo_image,
+            fallback: 'images/valon-products-dark-2.jpg',
+            alt: 'VALON Strengthening Shampoo — Shampooing Naturel Purifiant 200ml',
+            width: 600,
+            height: 600
+          %}
         </div>
         <div class="showcase-card__body">
           <h3>Shampooing Naturel Purifiant</h3>

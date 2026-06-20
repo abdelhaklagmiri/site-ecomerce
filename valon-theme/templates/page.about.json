@@ -9,7 +9,9 @@
     },
     "lifestyle": {
       "type": "solution",
-      "settings": {}
+      "settings": {
+        "fallback_image": "images/valon-lifestyle.png"
+      }
     },
     "whatsapp": { "type": "whatsapp-section", "settings": {} }
   },
