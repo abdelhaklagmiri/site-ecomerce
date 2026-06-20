@@ -1,0 +1,40 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Passer au contenu"
+    },
+    "meta": {
+      "tags": "Mots-clés : {{ tags }}",
+      "page": "Page {{ page }}"
+    },
+    "search": { "search": "Rechercher" },
+    "password_page": {
+      "login_form_heading": "Accéder à la boutique",
+      "login_form_password_label": "Mot de passe",
+      "login_form_submit": "Entrer"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Ajouter au panier — Paiement à la livraison",
+      "sold_out": "Rupture de stock",
+      "unavailable": "Indisponible"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Panier",
+      "empty": "Votre panier est vide",
+      "checkout": "Commander — Paiement à la livraison",
+      "continue_shopping": "Continuer vos achats",
+      "subtotal": "Sous-total",
+      "remove": "Supprimer"
+    }
+  },
+  "sections": {
+    "404": {
+      "title": "Page introuvable",
+      "subtext": "La page que vous recherchez n'existe pas."
+    }
+  }
+}

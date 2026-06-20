@@ -1,0 +1,54 @@
+<section class="product-section product-section--alt">
+  <div class="container">
+    <div class="how-to-use">
+      <div class="how-to-use__image">
+        {% render 'valon-image',
+          image: section.settings.image,
+          fallback: 'images/valon-serum-application.png',
+          alt: 'Application huile capillaire VALON',
+          width: 600,
+          height: 600
+        %}
+      </div>
+      <div>
+        <span class="section-label">Mode d'utilisation</span>
+        <h2 class="heading-serif heading-lg">Comment utiliser ce produit</h2>
+
+        {%- if product.handle == 'shampooing-valon' -%}
+          <ol class="how-to-use__steps">
+            <li>Humidifiez vos cheveux à l'eau tiède</li>
+            <li>Appliquez une noisette de shampooing sur le cuir chevelu</li>
+            <li>Massez délicatement en mouvements circulaires pendant 2 minutes</li>
+            <li>Laissez poser 1 minute pour une action en profondeur</li>
+            <li>Rincez abondamment à l'eau tiède</li>
+          </ol>
+          <p class="how-to-use__freq">Fréquence recommandée : 2 à 3 fois par semaine</p>
+        {%- else -%}
+          <ol class="how-to-use__steps">
+            <li>Sur cheveux humides ou secs, déposez 2-3 pressions dans la paume</li>
+            <li>Frottez vos mains pour réchauffer l'huile capillaire</li>
+            <li>Appliquez sur les longueurs et pointes en massant doucement</li>
+            <li>Pour le cuir chevelu : massez avec le bout des doigts</li>
+            <li>Ne rincez pas — laissez agir toute la journée ou la nuit</li>
+          </ol>
+          <p class="how-to-use__freq">Fréquence recommandée : quotidien ou 3-4 fois par semaine</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mode d'utilisation",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Image mains appliquant le produit"
+    }
+  ],
+  "presets": [{ "name": "Mode d'utilisation" }]
+}
+{% endschema %}

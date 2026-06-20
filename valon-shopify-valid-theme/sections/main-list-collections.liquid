@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <h1 class="heading-serif heading-lg text-center" style="margin-bottom:2rem;">Collections</h1>
+    <div class="grid" style="display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      {%- for collection in collections -%}
+        <a href="{{ collection.url }}" class="card" style="padding:1.5rem;border:1px solid var(--color-gray-light);text-align:center;">
+          <h2 class="heading-serif" style="font-size:1.25rem;margin-bottom:0.5rem;">{{ collection.title }}</h2>
+          <p class="text-muted" style="font-size:0.85rem;">{{ collection.products_count }} produit{% if collection.products_count > 1 %}s{% endif %}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Liste collections",
+  "settings": [],
+  "presets": [{ "name": "Liste collections" }]
+}
+{% endschema %}

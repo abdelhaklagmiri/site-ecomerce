@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "label": "Routine Capillaire Premium — Formulé en Turquie 🇹🇷",
+        "heading": "Sublimez vos cheveux avec <em>l'or liquide</em> de VALON",
+        "subheading": "Pack Complet : Huile Capillaire Nourrissante 60ml + Shampooing Naturel Purifiant 200ml. Routine luxueuse importée de Turquie pour des cheveux plus forts, plus brillants, plus sains.",
+        "cta_text": "Commander le Pack — 649 MAD",
+        "cta_url": "/products/valon-hair-care-pack",
+        "cta_secondary_text": "Découvrir nos produits",
+        "cta_secondary_url": "/collections/all"
+      }
+    },
+    "trust-bar": { "type": "trust-bar", "settings": {} },
+    "turkish-origin": { "type": "turkish-origin", "settings": {} },
+    "problem": { "type": "problem", "settings": {} },
+    "solution": { "type": "solution", "settings": {} },
+    "product-showcase": { "type": "product-showcase", "settings": {} },
+    "benefits": { "type": "benefits", "settings": {} },
+    "how-it-works": { "type": "how-it-works", "settings": {} },
+    "before-after": { "type": "before-after", "settings": {} },
+    "testimonials": { "type": "testimonials", "settings": {} },
+    "objections": { "type": "objections", "settings": {} },
+    "guarantee": { "type": "guarantee-section", "settings": {} },
+    "faq": { "type": "faq", "settings": {} },
+    "trust": { "type": "trust-section", "settings": {} },
+    "cod": { "type": "cod-section", "settings": {} },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} },
+    "final-cta": { "type": "final-cta", "settings": {} }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "turkish-origin",
+    "problem",
+    "solution",
+    "product-showcase",
+    "benefits",
+    "how-it-works",
+    "before-after",
+    "testimonials",
+    "objections",
+    "guarantee",
+    "faq",
+    "trust",
+    "cod",
+    "whatsapp",
+    "final-cta"
+  ]
+}

@@ -1,0 +1,38 @@
+<div class="product-card">
+  <a href="{{ product.url }}" class="product-card__image-link">
+    {%- if product.featured_image -%}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.featured_image.alt | escape }}"
+        class="product-card__image"
+        loading="lazy"
+        width="600"
+        height="600"
+      >
+    {%- else -%}
+      {%- liquid
+        assign card_fallback = 'images/valon-pack-unboxing.png'
+        if product.handle == 'shampooing-valon'
+          assign card_fallback = 'images/valon-products-dark-2.jpg'
+        elsif product.handle == 'huile-capillaire-valon' or product.handle == 'serum-capillaire-valon'
+          assign card_fallback = 'images/valon-products-dark-1.jpg'
+        endif
+      -%}
+      <img
+        src="{{ card_fallback | asset_url }}"
+        alt="{{ product.title | escape }}"
+        class="product-card__image"
+        loading="lazy"
+        width="600"
+        height="600"
+      >
+    {%- endif -%}
+  </a>
+  <div class="product-card__info">
+    <h3 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+    <p class="product-card__price">{{ product.price | money }}</p>
+    <a href="{{ product.url }}" class="btn btn--outline btn--small">Découvrir</a>
+  </div>
+</div>

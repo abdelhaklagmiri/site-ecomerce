@@ -1,0 +1,39 @@
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Confiance</span>
+      <h2 class="heading-serif heading-lg">Pourquoi choisir VALON ?</h2>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-item__icon">🇹🇷</div>
+        <h3>Import direct Turquie</h3>
+        <p>Formules développées et fabriquées en Turquie selon les standards cosmétiques internationaux</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">🚚</div>
+        <h3>Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH</h3>
+        <p>Livraison offerte sur toutes les commandes à partir de {{ settings.free_shipping_threshold | default: 399 }} MAD partout au Maroc</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">💵</div>
+        <h3>Paiement à la livraison</h3>
+        <p>Payez en espèces au livreur à la réception. Aucun paiement en avance, zéro risque</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">🛡️</div>
+        <h3>Garantie {{ settings.guarantee_days | default: 40 }} jours</h3>
+        <p>Satisfaite ou remboursée sous {{ settings.guarantee_days | default: 40 }} jours — notre engagement qualité</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Section Confiance",
+  "settings": [],
+  "presets": [{ "name": "Section Confiance" }]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Résultats réels</span>
+      <h2 class="heading-serif heading-lg">Avant / Après — Ce que nos clientes constatent</h2>
+      <p>Après 4 à 8 semaines avec la routine VALON — Huile Capillaire + Shampooing Purifiant.</p>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="before-after__visual">
+        {% render 'valon-image',
+          image: section.settings.image,
+          fallback: 'images/valon-lifestyle.png',
+          alt: 'Résultats VALON Hair Care — clientes marocaines',
+          width: 900,
+          height: 700
+        %}
+      </div>
+      <div class="before-after__results">
+        <div class="before-after__stat">
+          <strong>−50%</strong>
+          <span>Chute de cheveux réduite</span>
+        </div>
+        <div class="before-after__stat">
+          <strong>+3x</strong>
+          <span>Plus de brillance</span>
+        </div>
+        <div class="before-after__stat">
+          <strong>4-8 sem.</strong>
+          <span>Résultats visibles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid" style="margin-top:2.5rem;">
+      <div class="testimonial">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">« Chute de cheveux réduite de moitié en 6 semaines. Mes cheveux sont plus épais, plus brillants. Le Pack Complet vaut chaque dirham. »</p>
+        <p class="testimonial__author">Fatima Z.</p>
+        <p class="testimonial__location">Casablanca — Pack Complet VALON</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">« Cheveux secs et cassants depuis des années. L'huile dorée VALON a tout transformé — douceur, brillance, et repousse visible. »</p>
+        <p class="testimonial__author">Sara M.</p>
+        <p class="testimonial__location">Rabat — Huile Capillaire 60ml</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">« Mes boucles n'ont jamais été aussi définies et hydratées. Le shampooing sans sulfates change tout. Qualité turque au top. »</p>
+        <p class="testimonial__author">Khadija B.</p>
+        <p class="testimonial__location">Marrakech — Pack Complet VALON</p>
+      </div>
+    </div>
+
+    <p class="text-center text-muted" style="margin-top:2rem;font-size:0.8rem;">Résultats individuels. Utilisation régulière 3x/semaine recommandée.</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avant / Après",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image lifestyle / résultats",
+      "info": "Collage lifestyle ou photos avant-après"
+    }
+  ],
+  "presets": [{ "name": "Avant / Après" }]
+}
+{% endschema %}

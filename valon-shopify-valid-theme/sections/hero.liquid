@@ -1,0 +1,91 @@
+<section class="hero">
+  <div class="hero__bg">
+    {% render 'valon-image',
+      image: section.settings.image,
+      fallback: 'images/valon-hero-splash.png',
+      alt: 'VALON Hair Care — Sérum Capillaire et Shampooing sur fond doré',
+      width: 1920,
+      height: 1080,
+      loading: 'eager'
+    %}
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="container hero__content animate-in">
+    <span class="section-label">{{ section.settings.label }}</span>
+    <h1 class="heading-serif heading-xl">{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.subheading }}</p>
+
+    <div class="btn-group">
+      <a href="{{ section.settings.cta_url }}" class="btn btn--primary">{{ section.settings.cta_text }}</a>
+      <a href="{{ section.settings.cta_secondary_url }}" class="btn btn--outline">{{ section.settings.cta_secondary_text }}</a>
+    </div>
+
+    <div class="hero__trust">
+      <div class="hero__trust-item">
+        <strong>🇹🇷</strong> Formulé en Turquie
+      </div>
+      <div class="hero__trust-item">
+        <strong>✦</strong> Paiement à la livraison
+      </div>
+      <div class="hero__trust-item">
+        <strong>✦</strong> Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image hero",
+      "info": "Utiliser l'image produits avec éclaboussure d'huile dorée et noix d'argan"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Routine Capillaire Premium"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Sublimez vos cheveux avec <em>l'or liquide</em> de VALON"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Le Pack Complet VALON : Huile Capillaire Nourrissante 60ml + Shampooing Naturel Purifiant 200ml — routine luxueuse formulée en Turquie."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Bouton principal",
+      "default": "Commander le Pack — 649 MAD"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Lien bouton principal"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "Bouton secondaire",
+      "default": "Découvrir nos produits"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Lien bouton secondaire"
+    }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

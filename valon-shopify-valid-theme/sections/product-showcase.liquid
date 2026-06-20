@@ -1,0 +1,68 @@
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Nos produits</span>
+      <h2 class="heading-serif heading-lg">Une routine complète, deux produits essentiels</h2>
+      <p>Chaque produit VALON est conçu pour travailler en synergie avec l'autre — pour des résultats que vous verrez et sentirez.</p>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="showcase-card__image">
+          {% render 'valon-image',
+            image: section.settings.serum_image,
+            fallback: 'images/valon-products-dark-1.jpg',
+            alt: 'VALON Huile Capillaire Nourrissante 60ml',
+            width: 600,
+            height: 600
+          %}
+        </div>
+        <div class="showcase-card__body">
+          <h3>Huile Capillaire Nourrissante</h3>
+          <p>60ml — Huile précieuse à base d'huiles naturelles. Fortifie, sublime et stimule la croissance capillaire. Appliquez sur les longueurs et pointes.</p>
+          <p class="showcase-card__price">Inclus dans le Pack</p>
+          <a href="/products/huile-capillaire-valon" class="btn btn--outline btn--small">En savoir plus</a>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <div class="showcase-card__image">
+          {% render 'valon-image',
+            image: section.settings.shampoo_image,
+            fallback: 'images/valon-products-dark-2.jpg',
+            alt: 'VALON Strengthening Shampoo — Shampooing Naturel Purifiant 200ml',
+            width: 600,
+            height: 600
+          %}
+        </div>
+        <div class="showcase-card__body">
+          <h3>Shampooing Naturel Purifiant</h3>
+          <p>200ml — À base d'extraits de plantes. Nettoie en profondeur le cuir chevelu, purifie et redonne force et brillance. Sans sulfates.</p>
+          <p class="showcase-card__price">Inclus dans le Pack</p>
+          <a href="/products/shampooing-valon" class="btn btn--outline btn--small">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitrine Produits",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "serum_image",
+      "label": "Image Huile Capillaire",
+      "info": "Image huile capillaire sur fond sombre"
+    },
+    {
+      "type": "image_picker",
+      "id": "shampoo_image",
+      "label": "Image Shampooing",
+      "info": "Image produit shampooing sur fond sombre"
+    }
+  ],
+  "presets": [{ "name": "Vitrine Produits" }]
+}
+{% endschema %}

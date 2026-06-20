@@ -1,0 +1,43 @@
+<section class="bundle-hero">
+  <div class="container">
+    <span class="section-label">Offre Exclusive</span>
+    <h1 class="heading-serif heading-xl">Pack Complet VALON</h1>
+    <p style="max-width:600px;margin:0 auto;opacity:0.8;">La routine capillaire complète pour des cheveux sublimes. Huile capillaire 60ml + Shampooing purifiant 200ml dans un coffret cadeau premium.</p>
+
+    <div class="bundle-hero__image">
+      {% render 'valon-image',
+        image: section.settings.image,
+        fallback: 'images/valon-pack-unboxing.png',
+        alt: 'Pack Complet VALON Hair Care — coffret cadeau premium',
+        width: 800,
+        height: 600,
+        loading: 'eager'
+      %}
+    </div>
+
+    <span class="bundle-hero__savings">Meilleure offre — Économisez jusqu'à 150 MAD</span>
+    <p class="bundle-hero__price">649 MAD</p>
+    <p style="opacity:0.7;margin-bottom:2rem;">Paiement à la livraison · Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH</p>
+
+    <div class="btn-group">
+      <a href="#commander" class="btn btn--primary">Commander le Pack — 649 MAD</a>
+      {%- capture wa_pack %}{% render 'whatsapp-link', message: 'Bonjour VALON, je souhaite commander le Pack Complet à 649 MAD.' %}{% endcapture -%}
+      <a href="{{ wa_pack | strip }}" class="btn btn--outline" target="_blank" rel="noopener">Commander via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Bundle",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Image boîte cadeau ouverte avec produits et papier doré"
+    }
+  ],
+  "presets": [{ "name": "Hero Bundle" }]
+}
+{% endschema %}

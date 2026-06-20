@@ -1,0 +1,54 @@
+<section class="section">
+  <div class="container">
+    <div class="solution">
+      <div class="solution__image">
+        {% render 'valon-image',
+          image: section.settings.image,
+          fallback: section.settings.fallback_image,
+          alt: 'Application du sérum capillaire VALON — texture dorée',
+          width: 800,
+          height: 800
+        %}
+      </div>
+      <div class="solution__content">
+        <span class="section-label">La solution</span>
+        <h2 class="heading-serif heading-lg">VALON — La science turque au service de vos cheveux</h2>
+        <p>VALON Hair Care est une marque premium dont les formules sont développées et fabriquées en Turquie — pays reconnu mondialement pour son expertise en cosmétique capillaire naturelle.</p>
+        <p>Notre routine en deux étapes nettoie en profondeur, nourrit intensément et stimule la repousse pour des résultats visibles dès les premières semaines.</p>
+        <ul class="solution__list">
+          <li>Formules à base d'extraits naturels et d'huiles précieuses</li>
+          <li>Sans sulfates, sans silicones, sans parabènes</li>
+          <li>Testé et apprécié par nos clientes au Maroc</li>
+          <li>Importé directement de Turquie — qualité internationale</li>
+        </ul>
+        <a href="/pages/pack-complet" class="btn btn--primary" style="margin-top:1.5rem;">Découvrir le Pack Complet — 649 MAD</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Section Solution",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Utiliser l'image mains appliquant le sérum doré"
+    },
+    {
+      "type": "select",
+      "id": "fallback_image",
+      "label": "Image par défaut",
+      "options": [
+        { "value": "images/valon-serum-application.png", "label": "Application du sérum" },
+        { "value": "images/valon-lifestyle.png", "label": "Lifestyle VALON" },
+        { "value": "images/valon-hero-splash.png", "label": "Produits splash doré" }
+      ],
+      "default": "images/valon-serum-application.png"
+    }
+  ],
+  "presets": [{ "name": "Section Solution" }]
+}
+{% endschema %}

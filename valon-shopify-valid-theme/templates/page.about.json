@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "content": {
+      "type": "page-content",
+      "settings": {
+        "title": "À Propos de VALON",
+        "content": "<p><strong>VALON Hair Care</strong> est née d'une conviction simple : chaque femme mérite une routine capillaire digne des plus grandes marques de luxe, accessible depuis le Maroc.</p><h2>Notre Histoire</h2><p>Fondée avec la vision de démocratiser les soins capillaires premium, VALON s'est associée à des laboratoires turcs reconnus mondialement pour leur expertise en cosmétique naturelle. La Turquie, berceau de traditions capillaires séculaires, offre un savoir-faire unique que nous mettons au service de nos clientes marocaines.</p><h2>Notre Mission</h2><p>Offrir à chaque femme marocaine une routine capillaire complète, efficace et luxueuse — sans compromis sur la qualité des ingrédients ni sur l'expérience client.</p><h2>Nos Valeurs</h2><ul><li><strong>Qualité sans compromis</strong> — Formules développées en Turquie selon les normes internationales</li><li><strong>Transparence totale</strong> — Ingrédients naturels, sans sulfates, sans parabènes</li><li><strong>Service client d'exception</strong> — Support WhatsApp personnalisé 7j/7</li><li><strong>Confiance</strong> — Paiement à la livraison pour une expérience sans risque</li></ul><h2>Fabriqué en Turquie 🇹🇷</h2><p>Nos produits sont formulés et fabriqués en Turquie, puis importés directement pour garantir l'authenticité et la fraîcheur de chaque formule. La Turquie est reconnue comme l'un des leaders mondiaux de la cosmétique capillaire naturelle.</p><h2>VALON — La routine qui te sublime.</h2>"
+      }
+    },
+    "lifestyle": {
+      "type": "solution",
+      "settings": {
+        "fallback_image": "images/valon-lifestyle.png"
+      }
+    },
+    "whatsapp": { "type": "whatsapp-section", "settings": {} }
+  },
+  "order": ["content", "lifestyle", "whatsapp"]
+}

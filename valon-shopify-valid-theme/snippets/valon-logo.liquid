@@ -1,0 +1,30 @@
+<a href="{{ routes.root_url }}" class="site-logo" aria-label="VALON Hair Care — Accueil">
+  {%- if section.settings.logo != blank -%}
+    <img
+      src="{{ section.settings.logo | image_url: width: 280 }}"
+      alt="{{ shop.name }}"
+      class="site-logo__image"
+      width="140"
+      height="40"
+      loading="eager"
+    >
+  {%- elsif settings.logo != blank -%}
+    <img
+      src="{{ settings.logo | image_url: width: 280 }}"
+      alt="{{ shop.name }}"
+      class="site-logo__image"
+      width="140"
+      height="40"
+      loading="eager"
+    >
+  {%- else -%}
+    <img
+      src="{{ 'valon-logo.svg' | asset_url }}"
+      alt="VALON Hair Care"
+      class="site-logo__image"
+      width="140"
+      height="40"
+      loading="eager"
+    >
+  {%- endif -%}
+</a>

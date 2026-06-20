@@ -1,0 +1,28 @@
+<section class="section guarantee-section">
+  <div class="container">
+    <div class="guarantee-box">
+      <div class="guarantee-box__badge">
+        <span class="guarantee-box__days">{{ settings.guarantee_days | default: 40 }}</span>
+        <span class="guarantee-box__label">jours</span>
+      </div>
+      <div class="guarantee-box__content">
+        <span class="section-label">Garantie satisfaction</span>
+        <h2 class="heading-serif heading-md">Satisfaite ou remboursée — {{ settings.guarantee_days | default: 40 }} jours</h2>
+        <p>Essayez VALON en toute sérénité. Si la routine ne vous convient pas, contactez-nous sous {{ settings.guarantee_days | default: 40 }} jours après réception. Notre équipe vous accompagne pour un remboursement ou un échange, sans complication.</p>
+        <ul class="guarantee-box__list">
+          <li>✦ Aucun paiement avant réception (COD)</li>
+          <li>✦ Support WhatsApp dédié 7j/7</li>
+          <li>✦ Produit endommagé ? Remplacement gratuit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Garantie 40 jours",
+  "settings": [],
+  "presets": [{ "name": "Garantie satisfaction" }]
+}
+{% endschema %}

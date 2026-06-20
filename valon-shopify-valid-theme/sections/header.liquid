@@ -1,0 +1,55 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    {% render 'valon-logo', section: section %}
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/pages/pack-complet">Pack Complet</a></li>
+        <li><a href="/collections/all">Produits</a></li>
+        <li><a href="/pages/a-propos">À Propos</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/cart" class="header-cart" aria-label="Panier">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 6h15l-1.5 9H7.5L6 6zM6 6L5 3H2M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="header-cart__count">{{ cart.item_count }}</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" aria-label="Navigation mobile">
+  <button class="mobile-nav__close" aria-label="Fermer">&times;</button>
+  <ul>
+    <li><a href="/">Accueil</a></li>
+    <li><a href="/pages/pack-complet">Pack Complet — 649 MAD</a></li>
+    <li><a href="/collections/all">Produits</a></li>
+    <li><a href="/pages/a-propos">À Propos</a></li>
+    <li><a href="/pages/faq">FAQ</a></li>
+    <li><a href="/pages/contact">Contact</a></li>
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo VALON",
+      "info": "Uploader le logo depuis vos photos produit. SVG par défaut si vide."
+    }
+  ]
+}
+{% endschema %}

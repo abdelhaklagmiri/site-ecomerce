@@ -1,0 +1,103 @@
+<div class="product-page">
+  <div class="container">
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="product-gallery__main">
+          {%- if product.featured_image -%}
+            <img
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              id="product-main-image"
+              width="800"
+              height="800"
+            >
+          {%- else -%}
+            {% render 'valon-image',
+              image: blank,
+              fallback: 'images/valon-pack-unboxing.png',
+              alt: product.title,
+              width: 800,
+              height: 800,
+              loading: 'eager'
+            %}
+          {%- endif -%}
+        </div>
+        {%- if product.images.size > 1 -%}
+          <div class="product-gallery__thumbs">
+            {%- for image in product.images -%}
+              <button class="product-gallery__thumb{% if forloop.first %} is-active{% endif %}" aria-label="Image {{ forloop.index }}">
+                <img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | escape }}" width="80" height="80" loading="lazy">
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product-info">
+        <p class="product-info__subtitle">VALON Hair Care — Formulé en Turquie 🇹🇷</p>
+        <h1 class="product-info__title">{{ product.title }}</h1>
+        <p class="product-info__price">{{ product.price | money }}</p>
+
+        {% render 'trust-badges' %}
+
+        <div class="product-info__description" style="margin-top:1.5rem;">{{ product.description }}</div>
+
+        {% render 'cod-badge' %}
+
+        <div class="product-form" style="margin-top:1.5rem;">
+          {% form 'product', product %}
+            <div class="quantity-selector">
+              <button type="button" data-action="minus" aria-label="Diminuer">−</button>
+              <input type="number" name="quantity" value="1" min="1" aria-label="Quantité">
+              <button type="button" data-action="plus" aria-label="Augmenter">+</button>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" {% unless product.available %}disabled{% endunless %}>
+              {%- if product.available -%}
+                Ajouter au panier — Paiement à la livraison
+              {%- else -%}
+                Rupture de stock
+              {%- endif -%}
+            </button>
+          {% endform %}
+        </div>
+
+        <div class="upsell-banner" style="margin-top:1.5rem;">
+          <div class="upsell-banner__text">
+            <h4>💡 Économisez avec le Pack Complet</h4>
+            <p>Huile capillaire 60ml + Shampooing 200ml + Coffret cadeau — 649 MAD</p>
+          </div>
+          <a href="/products/valon-hair-care-pack" class="btn btn--primary btn--small">Voir le Pack</a>
+        </div>
+
+        <div class="product-info__trust">
+          <div class="product-info__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Paiement à la livraison — zéro risque
+          </div>
+          <div class="product-info__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Livraison gratuite dès {{ settings.free_shipping_threshold | default: 399 }} DH
+          </div>
+          <div class="product-info__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Import direct de Turquie 🇹🇷
+          </div>
+          <div class="product-info__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Garantie satisfaction {{ settings.guarantee_days | default: 40 }} jours
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% render 'sticky-cart', product: product %}
+
+{% schema %}
+{
+  "name": "Produit Principal",
+  "settings": [],
+  "presets": [{ "name": "Produit Principal" }]
+}
+{% endschema %}
