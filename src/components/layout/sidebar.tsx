@@ -98,7 +98,7 @@ export function Sidebar({
                       "group/nav relative flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                       "text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                       active &&
-                        "bg-sidebar-accent text-sidebar-accent-foreground",
+                        "bg-sidebar-accent text-sidebar-accent-foreground shadow-[inset_0_0_0_1px_color-mix(in_oklch,var(--valon-gold)_25%,transparent)]",
                       item.disabled && "cursor-not-allowed opacity-50",
                       collapsed && "justify-center px-0",
                     )}
@@ -106,7 +106,7 @@ export function Sidebar({
                     {active ? (
                       <span
                         aria-hidden
-                        className="absolute left-0 top-1/2 h-5 w-[2px] -translate-y-1/2 rounded-r-full bg-[color:var(--valon-gold)]"
+                        className="absolute -left-2 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-r-full bg-[color:var(--valon-gold)] shadow-[0_0_12px_color-mix(in_oklch,var(--valon-gold)_60%,transparent)]"
                       />
                     ) : null}
                     <Icon
@@ -160,9 +160,8 @@ export function Sidebar({
               </div>
             </div>
             <Separator className="my-3 bg-sidebar-border" />
-            <p className="text-[11px] leading-relaxed text-muted-foreground">
-              Manage partners, orders, products & sales across Morocco from one
-              place.
+            <p className="break-words text-[11px] leading-relaxed text-muted-foreground">
+              Partners, orders, products &amp; sales — one workspace.
             </p>
           </div>
         ) : (
