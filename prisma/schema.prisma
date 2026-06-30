@@ -1,0 +1,235 @@
+// VALON CRM — Prisma schema
+// Built to scale beyond barbers: same Partner entity can later represent
+// beauty salons, pharmacies and cosmetic stores via PartnerType.
+//
+// Auth lives in Supabase (auth.users). We mirror the Supabase user id into
+// the public `User` table so we can attach roles & ownership without touching
+// the Supabase managed schema.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum UserRole {
+  OWNER
+  ADMIN
+  STAFF
+  VIEWER
+}
+
+enum PartnerType {
+  BARBER
+  SALON
+  PHARMACY
+  COSMETIC_STORE
+}
+
+enum PartnerStatus {
+  ACTIVE
+  PROSPECT
+  PAUSED
+  ARCHIVED
+}
+
+enum OrderStatus {
+  DRAFT
+  PENDING
+  CONFIRMED
+  FULFILLED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+  REFUNDED
+}
+
+enum ProductStatus {
+  ACTIVE
+  DRAFT
+  ARCHIVED
+}
+
+// ---------------------------------------------------------------------------
+// Identity
+// ---------------------------------------------------------------------------
+
+model User {
+  id          String   @id @db.Uuid // mirrors auth.users.id
+  email       String   @unique
+  fullName    String?
+  avatarUrl   String?
+  role        UserRole @default(STAFF)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  ordersCreated Order[] @relation("OrderCreatedBy")
+
+  @@map("users")
+}
+
+// ---------------------------------------------------------------------------
+// Catalog
+// ---------------------------------------------------------------------------
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  slug      String   @unique
+  products  Product[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("categories")
+}
+
+model Product {
+  id          String        @id @default(cuid())
+  sku         String        @unique
+  name        String
+  description String?
+  status      ProductStatus @default(ACTIVE)
+
+  // Pricing in MAD cents to avoid floating-point drift.
+  priceCents  Int
+  costCents   Int?
+  currency    String        @default("MAD")
+
+  stock       Int           @default(0)
+  reorderAt   Int?
+
+  categoryId  String?
+  category    Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  orderItems  OrderItem[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status])
+  @@index([categoryId])
+  @@map("products")
+}
+
+// ---------------------------------------------------------------------------
+// Partners (Barbers, Salons, Pharmacies, Cosmetic Stores)
+// ---------------------------------------------------------------------------
+
+model Partner {
+  id          String        @id @default(cuid())
+  type        PartnerType   @default(BARBER)
+  status      PartnerStatus @default(ACTIVE)
+
+  businessName String
+  contactName  String?
+  phone        String?
+  email        String?
+
+  // Address fields tuned for Morocco but generic enough to grow.
+  addressLine1 String?
+  addressLine2 String?
+  city         String?
+  region       String?
+  postalCode   String?
+  country      String? @default("MA")
+
+  notes       String?
+  tags        String[] @default([])
+
+  orders      Order[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([type])
+  @@index([status])
+  @@index([city])
+  @@map("partners")
+}
+
+// ---------------------------------------------------------------------------
+// Orders & Sales
+// ---------------------------------------------------------------------------
+
+model Order {
+  id            String        @id @default(cuid())
+  reference     String        @unique
+  status        OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(UNPAID)
+
+  partnerId     String
+  partner       Partner       @relation(fields: [partnerId], references: [id], onDelete: Restrict)
+
+  createdById   String?       @db.Uuid
+  createdBy     User?         @relation("OrderCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+  // Monetary totals stored as cents.
+  subtotalCents Int           @default(0)
+  discountCents Int           @default(0)
+  taxCents      Int           @default(0)
+  totalCents    Int           @default(0)
+  currency      String        @default("MAD")
+
+  notes         String?
+
+  items         OrderItem[]
+  payments      Payment[]
+
+  placedAt      DateTime?     // when status moves out of DRAFT
+  fulfilledAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([partnerId])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id          String   @id @default(cuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  quantity    Int
+  unitPriceCents Int
+  totalCents     Int
+
+  createdAt   DateTime @default(now())
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}
+
+model Payment {
+  id           String        @id @default(cuid())
+  orderId      String
+  order        Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  amountCents  Int
+  currency     String        @default("MAD")
+  method       String?       // cash, bank_transfer, card, ...
+  reference    String?
+  receivedAt   DateTime      @default(now())
+
+  createdAt    DateTime      @default(now())
+
+  @@index([orderId])
+  @@map("payments")
+}
